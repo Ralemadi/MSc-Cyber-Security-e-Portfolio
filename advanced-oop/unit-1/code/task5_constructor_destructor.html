@@ -1,0 +1,26 @@
+<!--
+Source - https://stackoverflow.com/a/62032824
+Posted by kiwirafe, modified by community. See post 'Timeline' for change history
+Retrieved 2026-08-08, License - CC BY-SA 4.0
+-->
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">class Person:
+    def __init__(self, name: str) -> None:
+        self.name = name
+        print(f"{self.name} has been created.")
+
+    def __del__(self) -> None:
+        print(f"Goodbye, {self.name}!")
+
+
+if __name__ == "__main__":
+    person = Person("Student X")
+    del person</code></pre>
+</body>

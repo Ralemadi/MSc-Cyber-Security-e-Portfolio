@@ -1,0 +1,43 @@
+<!--
+Source - https://stackoverflow.com/a/62032824
+Posted by kiwirafe, modified by community. See post 'Timeline' for change history
+Retrieved 2026-08-08, License - CC BY-SA 4.0
+-->
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">class BankAccount:
+    def __init__(self, initial_balance: float = 0.0) -> None:
+        if initial_balance < 0:
+            raise ValueError("Initial balance cannot be negative.")
+        self.__balance = initial_balance
+
+    def deposit(self, amount: float) -> None:
+        if amount <= 0:
+            raise ValueError("Deposit amount must be greater than zero.")
+        self.__balance += amount
+
+    def withdraw(self, amount: float) -> bool:
+        if amount <= 0:
+            raise ValueError("Withdrawal amount must be greater than zero.")
+        if amount > self.__balance:
+            print("Insufficient funds.")
+            return False
+        self.__balance -= amount
+        return True
+
+    def get_balance(self) -> float:
+        return self.__balance
+
+
+if __name__ == "__main__":
+    account = BankAccount(1000)
+    account.deposit(250)
+    account.withdraw(400)
+    print(f"Current balance: {account.get_balance():.2f}")</code></pre>
+</body>

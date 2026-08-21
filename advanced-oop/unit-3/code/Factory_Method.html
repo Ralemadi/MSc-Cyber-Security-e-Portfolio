@@ -1,0 +1,101 @@
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">from abc import ABC, abstractmethod
+
+class Car(ABC):
+
+    @abstractmethod
+    def drive(self) -> None:
+        """
+        Define the common drive behaviour.
+
+        Every concrete car class must implement
+        its own version of this method.
+        """
+        raise NotImplementedError
+class Sedan(Car):
+
+    def drive(self) -> None:
+        """
+  Sedan-specific implementation of the drive method
+        """
+        print("Driving a Sedan ")
+
+class SUV(Car):
+
+    def drive(self) -> None:
+        """
+        SUV-specific implementation of the drive 
+        """
+        print("Driving an SUV ")
+
+class Hatchback(Car):
+
+    def drive(self) -> None:
+        """
+        Hatchback-specific implementation of the drive  
+        """
+        print("Driving a Hatchback ")
+
+class CarFactory(ABC):
+
+    @abstractmethod
+    def create_car(self) -> Car:
+        """
+        Factory Method.
+
+        Concrete factory classes must implement this
+        method and return a Car object.
+        """
+        raise NotImplementedError
+
+# Each factory is responsible for manufacturing a specific type of car
+class SedanFactory(CarFactory):
+
+    def create_car(self) -> Car:
+        """
+        Create and return a Sedan object.
+        """
+        return Sedan()
+
+class SUVFactory(CarFactory):
+
+    def create_car(self) -> Car:
+        """
+        Create and return an SUV object.
+        """
+        return SUV()
+
+class HatchbackFactory(CarFactory):
+
+    def create_car(self) -> Car:
+        """
+        Create and return a Hatchback object.
+        """
+        return Hatchback()
+
+def demonstrate_factory(factory: CarFactory) -> None:
+    car = factory.create_car()
+    car.drive()
+
+if __name__ == "__main__":
+
+    # Each factory knows how to create one specific type of car.
+    factories = [
+        SedanFactory(),
+        SUVFactory(),
+        HatchbackFactory()
+    ]
+
+    # Go through every factory.
+    for factory in factories:
+
+        demonstrate_factory(factory)
+</code></pre>
+</body>
