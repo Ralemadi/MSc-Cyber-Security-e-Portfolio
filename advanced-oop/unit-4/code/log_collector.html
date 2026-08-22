@@ -1,0 +1,110 @@
+<!--
+Source - https://stackoverflow.com/a/62032824
+Posted by kiwirafe, modified by community. See post 'Timeline' for change history
+Retrieved 2026-08-08, License - CC BY-SA 4.0
+-->
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">from abc import ABC, abstractmethod
+
+# Target Interface
+class SecurityEventSource(ABC):
+
+    @abstractmethod
+    def get_events(self):
+        pass
+
+
+#  Legacy System
+
+class LegacyLogCollector:
+
+    def read_old_logs(self):
+        return [
+            "LOGIN_FAIL|10.10.1.10",
+            "MALWARE_ALERT|DC-01",
+            "MALWARE_ALERT|server-05"
+        ]
+
+
+
+# LogAdapter:
+
+class LogAdapter(SecurityEventSource):
+
+    def __init__(self, legacy_collector):
+        # store the legacy system in the adapter
+        self.legacy_collector = legacy_collector
+        
+    def get_events(self):
+
+        events = []
+
+
+        legacy_logs = self.legacy_collector.read_old_logs()
+
+        for log in legacy_logs:
+
+            event_type, source = log.split("|")
+
+            # convert it into the new format
+            events.append({
+                "event": event_type,
+                "source": source,
+                "system": "Legacy System"
+            })
+
+        return events
+
+
+#Modern System
+class ModernLogCollector(SecurityEventSource):
+
+    def get_events(self):
+        return [
+            {
+                "event": "BRUTE_FORCE",
+                "source": "192.168.1.20",
+                "system": "Modern System"
+            },
+            {
+                "event": "SUSPICIOUS_LOGIN",
+                "source": "WEB-SERVER-01",
+                "system": "Modern System"
+            }
+        ]
+
+#  create the log sources
+legacy_source = LogAdapter(LegacyLogCollector())
+modern_source = ModernLogCollector()
+
+
+sources = [
+    legacy_source,
+    modern_source
+]
+
+
+
+# merge logs from the legacy and modern systems
+
+all_events = []
+
+for source in sources:
+
+    all_events.extend(source.get_events())
+
+#  display the combined security events
+
+print("ALL Security events:")
+
+for event in all_events:
+    print(event)
+</code></pre>
+</body>

@@ -1,0 +1,86 @@
+<!--
+Source - https://stackoverflow.com/a/62032824
+Posted by kiwirafe, modified by community. See post 'Timeline' for change history
+Retrieved 2026-08-08, License - CC BY-SA 4.0
+-->
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">from abc import ABC, abstractmethod
+
+
+class AlertChannel(ABC):
+
+    @abstractmethod
+    def send(self, message):
+        pass
+
+
+# Sends the alert to the console
+class ConsoleChannel(AlertChannel):
+
+    def send(self, message):
+        print(f"Console: {message}")
+
+# Sends the alert through SMS
+class SMSChannel(AlertChannel):
+
+    def send(self, message):
+        print(f"SMS: {message}")
+
+# Sends the alert through email
+
+class EmailChannel(AlertChannel):
+
+    def send(self, message):
+        print(f"Email: {message}")
+
+
+# -- Bridge:
+# The alert does not know how the message is delivered It only uses the AlertChannel interface.
+
+class SecurityAlert:
+
+    def __init__(self, channel):
+        # Store the selected delivery channel
+        self.channel = channel
+
+    def notify(self, message):
+        # Delegate the delivery to the channel
+        self.channel.send(message)
+
+
+
+# Critical Alert extends Security Alert and changes the alert behaviour without changing the delivery channel.
+class CriticalAlert(SecurityAlert):
+
+    def notify(self, message):
+        self.channel.send(f"CRITICAL - {message}")
+
+
+
+#-- The alert type and the delivery channel can be combined independently. 
+# Normal security alert sent to the console
+SecurityAlert(ConsoleChannel()).notify(
+    "New login detected"
+)
+
+# Critical security alert sent through email
+CriticalAlert(EmailChannel()).notify(
+    "Malware detected"
+)
+
+
+
+# Critical security alert sent through SMS
+CriticalAlert(SMSChannel()).notify(
+    "Malware detected"
+)
+
+</code></pre>
+</body>

@@ -1,0 +1,120 @@
+<!--
+Source - https://stackoverflow.com/a/62032824
+Posted by kiwirafe, modified by community. See post 'Timeline' for change history
+Retrieved 2026-08-08, License - CC BY-SA 4.0
+-->
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">from abc import ABC, abstractmethod
+
+
+#interface
+class AssetComponent(ABC):
+
+    @abstractmethod
+    def show(self, indent=0):
+        pass
+
+
+# network device
+class Device(AssetComponent):
+
+    def __init__(self, name):
+        self.name = name
+
+    def show(self, indent=0):
+        print(" " * indent + self.name)
+
+
+# Composite  Devices or  AssetGroups
+class AssetGroup(AssetComponent):
+
+    def __init__(self, name):
+        self.name = name
+        self.children = []
+
+    def add(self, component):
+        self.children.append(component)
+
+    def show(self, indent=0):
+        print(" " * indent + self.name)
+
+        for child in self.children:
+            child.show(indent + 2)
+
+
+
+# create network asset
+
+firewall_01 = Device("Firewall-01")
+firewall_02 = Device("Firewall-02")
+
+web_server = Device("Web-Server-01")
+
+database_01 = Device("Database-Server-01")
+database_02 = Device("Database-Server-02")
+
+security_workstation_01 = Device("Security-Analyst-Workstation-01")
+security_workstation_02 = Device("Security-Analyst-Workstation-02")
+security_workstation_03 = Device("Security-Analyst-Workstation-03")
+
+employee_workstation_01 = Device("Employee-Workstation-01")
+employee_workstation_02 = Device("Employee-Workstation-02")
+employee_workstation_03 = Device("Employee-Workstation-03")
+employee_workstation_04 = Device("Employee-Workstation-04")
+
+
+
+#-- Create asset groups
+
+# Firewall group
+security_perimeter = AssetGroup("Security Perimeter")
+security_perimeter.add(firewall_01)
+security_perimeter.add(firewall_02)
+
+
+# Server group
+server_network = AssetGroup("Server Network")
+server_network.add(web_server)
+server_network.add(database_01)
+server_network.add(database_02)
+
+
+# Security team workstation group
+security_team = AssetGroup("Security Team")
+security_team.add(security_workstation_01)
+security_team.add(security_workstation_02)
+security_team.add(security_workstation_03)
+
+
+# Normal employee workstation group
+employee_network = AssetGroup("Employee Network")
+employee_network.add(employee_workstation_01)
+employee_network.add(employee_workstation_02)
+employee_network.add(employee_workstation_03)
+employee_network.add(employee_workstation_04)
+
+
+
+# Main Composite
+# Office Network contains several different asset groups
+
+office_network = AssetGroup("Office Network")
+
+office_network.add(security_perimeter)
+office_network.add(server_network)
+office_network.add(security_team)
+office_network.add(employee_network)
+
+
+
+# Display the complete network Asset
+office_network.show()
+</code></pre>
+</body>
