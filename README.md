@@ -11,6 +11,6 @@ Please view [My e-portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Por
 * [Unit 1](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-1/unit-1.html): Introduction and Recap of Object-Oriented Programming (OOP) 
 * [Unit 2](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-2/unit-2.html): SOLID Principles of Object-Oriented Design
 * [Unit 3](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-3/unit-3.html): Design Patterns I - Creational Patterns
-* Unit 4: Design Patterns II - Structural Patterns
+* [Unit 4](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/unit-4.html): Design Patterns II - Structural Patterns
 
  
