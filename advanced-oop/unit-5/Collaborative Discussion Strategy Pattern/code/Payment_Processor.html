@@ -1,0 +1,53 @@
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">from abc import ABC, abstractmethod
+# Strategy interface
+class Payment_Strategy(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+# Concrete strategies
+class CreditCard_Payment(Payment_Strategy):
+
+    def pay(self, amount):
+        return f"Credit card payment completed: ${amount:.2f}"
+class PayPal_Payment(Payment_Strategy):
+
+    def pay(self, amount):
+        return f"PayPal payment completed: ${amount:.2f}"
+class BankTransfer_Payment(Payment_Strategy):
+
+    def pay(self, amount):
+        return f"Bank transfer started: ${amount:.2f}"
+# Context
+class PaymentProcessor:
+    def __init__(self, strategy):
+        self.strategy = strategy
+
+    def change_payment_method(self, strategy):
+        self.strategy = strategy
+
+    def process_payment(self, amount):
+
+        # validation for all payment methods
+        if amount <= 0:
+            raise ValueError("Enter an amount greater than $0.")
+        print(self.strategy.pay(amount))
+# Usage
+processor = PaymentProcessor(CreditCard_Payment())
+processor.process_payment(150)
+
+processor.change_payment_method(PayPal_Payment())
+processor.process_payment(40)
+
+processor.change_payment_method(BankTransfer_Payment())
+processor.process_payment(250)
+
+</code></pre>
+</body>

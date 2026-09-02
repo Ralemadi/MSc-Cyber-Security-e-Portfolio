@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+    Forty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license
+-->
+<html lang="en">
+<head>
+    <title>Unit 5 | MSc Cyber Security e-Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="MSc Cyber Security e-Portfolio, University of Essex" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <style>
+        #main .inner > p { margin-bottom: 1.15em; }
+        #main .inner > header.major { margin-bottom: 1.1em; }
+        #main .inner > header.major:not(:first-child) { margin-top: 1.8em; }
+        #main .inner > ul { margin-bottom: 1.5em; }
+        #main .inner > .table-wrapper { margin-top: 0.5em; margin-bottom: 1.5em; }
+        .peer-feedback { margin-top: 1.2em; margin-bottom: 2em; }
+        .peer-feedback figure { margin: 1.2em 0 1.8em 0; }
+        .peer-feedback img { display:block; width:100%; max-width:1000px; height:auto; margin-left:auto; margin-right:auto; border:1px solid rgba(212,212,255,0.15); }
+        .peer-feedback figcaption { margin-top:0.6em; font-size:0.9em; opacity:0.85; }
+    </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+<header id="header">
+    <a href="../../index.html" class="logo"><strong>MSc Cyber Security</strong><span>e-Portfolio</span></a>
+    <nav><a href="#menu">Menu</a></nav>
+</header>
+<nav id="menu"><ul class="links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../advanced-oop.html">Module Overview</a></li>
+    <li><a href="../unit-1/unit-1.html">Unit 1</a></li>
+    <li><a href="../unit-2/unit-2.html">Unit 2</a></li>
+    <li><a href="../unit-3/unit-3.html">Unit 3</a></li>
+    <li><a href="../unit-4/unit-4.html">Unit 4</a></li>
+    <li><a href="../unit-5/unit-5.html">Unit 5</a></li>
+</ul></nav>
+<section id="banner" class="style2"><div class="inner">
+<header class="major"><h1>Unit 5: Design Patterns III - Behavioural Patterns</h1></header>
+<div class="content"><p>Advanced Object-Oriented Design and Programming</p></div>
+</div></section>
+<div id="main" class="alt"><section id="one"><div class="inner">
+<header class="major"><h2>Unit Summary</h2></header>
+<p>During this unit, I explored behavioural design patterns and how they define the way objects interact, communicate and share responsibilities within object-oriented software. Gamma et al. (1994) describe behavioural patterns as patterns concerned with algorithms and the assignment of responsibilities between objects. The unit covered Strategy, Observer, Chain of Responsibility, Template Method, Command and State, with the practical work focusing on the application of the Strategy Pattern.</p>
+<header class="major"><h2>Learning Outcomes</h2></header>
+<p>After completing this unit, I was able to:</p>
+<ul>
+<li>Understand the purpose of behavioural design patterns in object-oriented software.</li>
+<li>Recognise the six behavioural patterns and the different interaction problems they address.</li>
+<li>Explain how behavioural patterns can improve flexibility, communication and maintainability.</li>
+<li>Apply the Strategy Pattern in a practical Python refactoring exercise.</li>
+<li>Recognise how behavioural patterns can be applied to software and cybersecurity scenarios.</li>
+</ul>
+<header class="major"><h2>Artefacts and Practical Exercises</h2></header>
+<p>The main artefact for this unit was Collaborative Discussion 2, which involved analysing and refactoring a simple payment processing system using the Strategy Pattern. The original implementation used an if/elif structure to select payment methods, which created tight coupling and required the existing PaymentProcessor class to be modified whenever a new payment option was introduced.</p>
+<p>I refactored the design by defining a common payment strategy interface and separating each payment method into its own strategy class. Sarcar (2022) explains that the Strategy Pattern separates alternative behaviours into interchangeable strategy implementations. PaymentProcessor then delegated the payment operation to the selected strategy, allowing the behaviour to be changed without modifying the processor itself. This exercise demonstrated how the Strategy Pattern can support the Open/Closed Principle while improving extensibility and testability.</p>
+<p>Download the Full Collaborative Discussion 2 Document: <a style="color:SkyBlue;" href="Collaborative%20Discussion%20Strategy%20Pattern/Collaborative%20Discussion%202%20Strategy%20Pattern.pdf">Collaborative Discussion 2 Strategy Pattern.pdf</a></p>
+<div class="table-wrapper"><table><thead><tr><th>Task</th><th>Topic</th><th>Source Code</th></tr></thead><tbody>
+<tr><td>1</td><td>Strategy Pattern - Payment Processor</td><td><a href="Collaborative%20Discussion%20Strategy%20Pattern/code/Payment_Processor.html">Open file</a></td></tr>
+</tbody></table></div>
+<header class="major"><h2>Collaborative Discussion - Peer Feedback</h2></header>
+<div class="peer-feedback">
+<p>Séba Daher highlighted that the refactoring achieved clear decoupling by using Payment_Strategy as the shared interface, allowing PaymentProcessor to remain independent of individual payment implementations. He also supported keeping the common amount validation inside PaymentProcessor because the rule applies to every strategy. His feedback raised an additional design consideration: individual payment methods may require their own method-specific eligibility rules, such as a higher minimum amount for wire transfers.</p>
+<figure><img src="images/S%C3%A9ba%20Daher%20replied.png" alt="Peer feedback from Séba Daher on the Strategy Pattern implementation" /><figcaption>Peer feedback on the Strategy Pattern design and validation approach.</figcaption></figure>
+<p>Sali Alawabdi also agreed that the original if/elif structure conflicts with the Open/Closed Principle and creates tight coupling. The response particularly highlighted change_payment_method() because it allows the selected payment strategy to be changed at runtime, and also supported keeping validation that applies to all payment methods inside PaymentProcessor.</p>
+<figure><img src="images/Sali%20Alawabdi%20replied.png" alt="Peer feedback from Sali Alawabdi on the Strategy Pattern implementation" /><figcaption>Peer feedback on runtime strategy changes and common validation.</figcaption></figure>
+</div>
+<header class="major"><h2>Unit 5 Reflection</h2></header>
+<p>This unit helped me understand that design patterns are not limited to object creation or class structure. Behavioural patterns focus on how responsibilities and actions are distributed between objects. The Strategy exercise was particularly useful because it demonstrated how a growing conditional structure can be replaced with interchangeable behaviours through a common interface.</p>
+<p>The exercise also reinforced my understanding of the Open/Closed Principle from the earlier SOLID unit. New payment behaviours could be introduced without modifying the main processor. At the same time, I recognised that design patterns can introduce additional structure and classes, so they should be applied when the expected flexibility and maintainability justify this additional complexity.</p>
+<p>Since the unit materials mentioned the Observer Pattern in cybersecurity systems, I explored the topic independently. Hurst, Merabti and Fergus (2014) demonstrate how observers can be used to monitor system behaviour and support the identification of cyber threats through changes in system activity. This helped me understand how changes in a monitored state can trigger alerts and allow immediate response actions to follow. Together, these lessons improved my confidence in designing maintainable and adaptable systems.</p>
+<header class="major"><h2>Professional Skills Development and Action Plan</h2></header>
+<p>The work in this unit improved my ability to identify behaviour that may change and separate it from stable application logic. It also strengthened my understanding of how object-oriented design can support software that is easier to test, extend and maintain.</p>
+<p>In future security-related development, I intend to consider behavioural patterns when designing components such as alert handling, monitoring workflows and response actions. I will focus on selecting a pattern based on a clear design problem rather than introducing additional structure unnecessarily.</p>
+<header class="major"><h2>References</h2></header>
+<ul class="alt">
+<li>Gamma, E. et al. (1994) <em>Design Patterns: Elements of Reusable Object-Oriented Software.</em> Reading, MA: Addison-Wesley.</li>
+<li>Hurst, W., Merabti, M. and Fergus, P. (2014) ‘Behaviour analysis techniques for supporting critical infrastructure security’, <em>International Journal of Critical Infrastructures</em>, 10(3/4), pp. 267–287. Available at: <a href="https://doi.org/10.1504/IJCIS.2014.066358">https://doi.org/10.1504/IJCIS.2014.066358</a>.</li>
+<li>Sarcar, V. (2022) <em>Java Design Patterns: A Hands-On Experience with Real-World Examples.</em> 3rd edn. New York: Apress.</li>
+</ul>
+</div></section></div>
+<footer id="footer"><div class="inner"><ul class="icons">
+<li><a href="https://github.com/Ralemadi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+</ul><ul class="copyright"><li>&copy; MSc Cyber Security e-Portfolio</li><li>University of Essex</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul></div></footer>
+</div>
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/jquery.scrolly.min.js"></script>
+<script src="../../assets/js/jquery.scrollex.min.js"></script>
+<script src="../../assets/js/browser.min.js"></script>
+<script src="../../assets/js/breakpoints.min.js"></script>
+<script src="../../assets/js/util.js"></script>
+<script src="../../assets/js/main.js"></script>
+</body></html>
