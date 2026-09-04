@@ -55,11 +55,11 @@ This allows payment behaviour to change without modifying the processor itself.
 
 Two peer responses provided useful feedback on the Strategy Pattern implementation.
 
-Séba Daher highlighted the decoupling achieved through the shared `Payment_Strategy` interface and supported keeping common amount validation inside `PaymentProcessor`. The response also raised an additional design consideration: some payment methods may require their own method-specific eligibility rules.
+Séba’s feedback confirmed that using Payment_Strategy kept PaymentProcessor independent from the individual payment methods. I also appreciated his support for keeping the shared amount validation in PaymentProcessor, since it applies to every strategy. I also liked his additional point about method-specific rules. Although my example only required validation that applies to all payment methods, his suggestion showed how the same design could be extended if individual strategies later required their own validation.
 
 ![Séba Daher replied](images/S%C3%A9ba%20Daher%20replied.png)
 
-Sali Alawabdi also agreed that the original `if/elif` approach conflicted with the Open/Closed Principle and created tight coupling. The feedback particularly highlighted `change_payment_method()` because it allows the selected strategy to be changed at runtime.
+I appreciated that Sali specifically highlighted change_payment_method(), as I included it to show how the strategy can be changed at runtime in a practical scenario. I was also pleased that she found the shared validation in PaymentProcessor useful for her own implementation. Her feedback confirmed that these small design choices made the solution more flexible and practical.
 
 ![Sali Alawabdi replied](images/Sali%20Alawabdi%20replied.png)
 
