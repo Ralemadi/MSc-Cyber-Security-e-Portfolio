@@ -46,7 +46,7 @@ The Composite example uses `AssetComponent` as a common interface for both indiv
 
 ## Peer Feedback
 
-The discussion also received feedback on the Adapter and Composite examples. One peer highlighted that normalising legacy and modern logs through an Adapter is sensible for security integration, while noting that a real pipeline may later need fields such as timestamps or severity.
+Two peer responses provided useful feedback on the structural-pattern examples. I appreciated Donald’s feedback because he understood why I used the Adapter Pattern for the security log example. I was already aware that a real logging system would need more details such as timestamps and severity. Still, I was glad he mentioned this because it showed that he was thinking about how the example could work beyond the simple demonstration.
 
 <img src="images/Donald%20Herbert%20Kofi%20Appeatsi%20Duodu%20replied.png" alt="Peer feedback on Adapter" width="900">
 
