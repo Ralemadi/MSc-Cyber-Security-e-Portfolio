@@ -32,11 +32,11 @@ The table below provides direct access to each unit's e-Portfolio page and repos
 
 | Unit | Topic | e-Portfolio | Repository |
 |---|---|---|---|
-| **Unit 1** | Introduction and Recap of Object-Oriented Programming | [View e-Portfolio](unit-1/unit-1.html) | [Browse Unit 1](unit-1/) |
-| **Unit 2** | SOLID Principles of Object-Oriented Design | [View e-Portfolio](unit-2/unit-2.html) | [Browse Unit 2](unit-2/) |
-| **Unit 3** | Design Patterns I – Creational Patterns | [View e-Portfolio](unit-3/unit-3.html) | [Browse Unit 3](unit-3/) |
-| **Unit 4** | Design Patterns II – Structural Patterns | [View e-Portfolio](unit-4/unit-4.html) | [Browse Unit 4](unit-4/) |
-| **Unit 5** | Design Patterns III – Behavioural Patterns | [View e-Portfolio](unit-5/unit-5.html) | [Browse Unit 5](unit-5/) |
+| **Unit 1** | Introduction and Recap of Object-Oriented Programming | [View e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-1/unit-1.html) | [Browse Unit 1](unit-1/) |
+| **Unit 2** | SOLID Principles of Object-Oriented Design | [View e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-2/unit-2.html) | [Browse Unit 2](unit-2/) |
+| **Unit 3** | Design Patterns I – Creational Patterns | [View e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-3/unit-3.html) | [Browse Unit 3](unit-3/) |
+| **Unit 4** | Design Patterns II – Structural Patterns | [View e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/unit-4.html) | [Browse Unit 4](unit-4/) |
+| **Unit 5** | Design Patterns III – Behavioural Patterns | [View e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-5/unit-5.html) | [Browse Unit 5](unit-5/) |
 | **Unit 6** | *To be added* | *To be added* | *To be added* |
 
 ---
