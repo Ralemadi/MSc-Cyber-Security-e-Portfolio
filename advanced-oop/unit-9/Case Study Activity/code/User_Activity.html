@@ -1,0 +1,106 @@
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">
+
+from ShopEase_Architecture import (
+    DataRepository,
+    UserService,
+    ProductCatalogService,
+    OrderService,
+    ShopEaseApp,
+    EmailNotification,
+    SMSNotification,
+    CardPayment,
+)
+
+
+def run_user_activity() -> None:
+    """Run a simple ShopEase user activity demonstration"""
+
+    # ------------------------------------------------------------
+    # 1. Create the Data Access Layer
+    # ------------------------------------------------------------
+    repository = DataRepository()
+
+    # ------------------------------------------------------------
+    # 2. Create Business Logic services using Dependency Injection
+    # ------------------------------------------------------------
+    user_service = UserService(repository)
+    product_service = ProductCatalogService(repository)
+    order_service = OrderService(repository)
+
+    # ------------------------------------------------------------
+    # 3. Attach notification observers
+    # ------------------------------------------------------------
+    order_service.attach_observer(EmailNotification())
+    order_service.attach_observer(SMSNotification())
+
+    # ------------------------------------------------------------
+    # 4. Create the Presentation Layer
+    # ------------------------------------------------------------
+    app = ShopEaseApp(
+        user_service,
+        product_service,
+        order_service
+    )
+
+    # ------------------------------------------------------------
+    # 5. Add sample products
+    # ------------------------------------------------------------
+    product_service.add_product(
+        "P001",
+        "Wireless Mouse",
+        29.99,
+        10
+    )
+
+    product_service.add_product(
+        "P002",
+        "Mechanical Keyboard",
+        74.50,
+        5
+    )
+
+    product_service.add_product(
+        "P003",
+        "USB-C Hub",
+        39.00,
+        8
+    )
+
+    # ------------------------------------------------------------
+    # 6. Demonstrate a simple user journey
+    # ------------------------------------------------------------
+    print("=== ShopEase User Activity ===")
+
+    app.register(
+        "testuser@gmail.com",
+        "SecurePassword123!"
+    )
+
+    app.show_products()
+
+    print("\nProcessing checkout:")
+
+    app.checkout(
+        email="testuser@gmail.com",
+        password="SecurePassword123!",
+        items={
+            "P001": 1,
+            "P003": 2
+        },
+        payment_strategy=CardPayment()
+    )
+
+if __name__ == "__main__":
+    run_user_activity()
+
+
+</code></pre>
+</body>

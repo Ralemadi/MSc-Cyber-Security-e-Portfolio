@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<!--
+    Forty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license
+-->
+<html lang="en">
+<head>
+    <title>Unit 9 | MSc Cyber Security e-Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="MSc Cyber Security e-Portfolio, University of Essex" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <style>
+        #main .inner > p { margin-bottom: 1.15em; }
+        #main .inner > header.major { margin-bottom: 1.1em; }
+        #main .inner > header.major:not(:first-child) { margin-top: 1.8em; }
+        #main .inner > ul { margin-bottom: 1.5em; }
+        #main .inner > .table-wrapper { margin-top: 0.5em; margin-bottom: 1.5em; }
+        code { white-space: normal; }
+    </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+<header id="header">
+    <a href="../../index.html" class="logo"><strong>MSc Cyber Security</strong><span>e-Portfolio</span></a>
+    <nav><a href="#menu">Menu</a></nav>
+</header>
+<nav id="menu"><ul class="links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../advanced-oop.html">Module Overview</a></li>
+    <li><a href="../unit-1/unit-1.html">Unit 1</a></li>
+    <li><a href="../unit-2/unit-2.html">Unit 2</a></li>
+    <li><a href="../unit-3/unit-3.html">Unit 3</a></li>
+    <li><a href="../unit-4/unit-4.html">Unit 4</a></li>
+    <li><a href="../unit-5/unit-5.html">Unit 5</a></li>
+    <li><a href="../unit-6/unit-6.html">Unit 6</a></li>
+    <li><a href="../unit-7/unit-7.html">Unit 7</a></li>
+    <li><a href="../unit-8/unit-8.html">Unit 8</a></li>
+    <li><a href="../unit-9/unit-9.html">Unit 9</a></li>
+    <li><a href="../unit-10/unit-10.html">Unit 10</a></li>
+    <li><a href="../unit-11/unit-11.html">Unit 11</a></li>
+    <li><a href="../unit-12/unit-12.html">Unit 12</a></li>
+
+</ul></nav>
+<section id="banner" class="style2"><div class="inner">
+<header class="major"><h1>Unit 9: Object-Oriented Software Architecture</h1></header>
+<div class="content"><p>Advanced Object-Oriented Design and Programming</p></div>
+</div></section>
+<div id="main" class="alt"><section id="one"><div class="inner">
+
+<header class="major"><h2>Unit Summary</h2></header>
+<p>Unit 9 focuses on software architecture and the role of object-oriented design in creating scalable, maintainable and secure systems. It covers key architectural styles, including layered architecture, microservices and monolithic applications, together with their main strengths, limitations and areas of use.</p>
+<p>The unit also introduces the use of object-oriented principles within software architecture and applies these concepts through the ShopEase case study. The practical activity uses layered architecture to separate presentation, business logic and data access responsibilities, while addressing modularity, security, scalability and extensibility.</p>
+
+<header class="major"><h2>Learning Outcomes</h2></header>
+<p>After completing this unit, I was able to:</p>
+<ul>
+<li>Understand and explain key software architecture styles, including layered architecture, microservices and monolithic applications.</li>
+<li>Recognise the role of object-oriented design in creating scalable, maintainable and secure architectures.</li>
+<li>Analyse a secure software architecture for a large-scale system.</li>
+<li>Apply architectural principles to design a simple object-oriented software architecture.</li>
+</ul>
+
+<header class="major"><h2>Artefacts and Practical Exercises</h2></header>
+<p>The ShopEase case study required the design of a layered object-oriented architecture for an e-commerce system. The Presentation Layer handles user interaction, the Business Logic Layer manages functions such as authentication, product catalogue and order processing, while the Data Access Layer is responsible for storing and retrieving system data.</p>
+<p>The system was divided into separate User Management, Product Catalogue and Order Processing modules. This modular structure separates major responsibilities and supports maintainability and extensibility by reducing direct dependencies between different parts of the system.</p>
+     
+
+<div class="table-wrapper"><table><thead><tr><th>Task</th><th>Topic</th><th>Evidence</th></tr></thead><tbody>
+<tr><td>1</td><td>ShopEase Object-Oriented Software Architecture</td><td><a href="https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/tree/main/advanced-oop/unit-9/Case%20Study%20Activity/">Open case study</a></td></tr>
+<tr><td>2</td><td>ShopEase Architecture</td><td><a href="https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-9/Case%20Study%20Activity/code/ShopEase_Architecture.html">Open code</a></td></tr>
+<tr><td>3</td><td>ShopEase User Activity</td><td><a href="https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-9/Case%20Study%20Activity/code/User_Activity.html">Open activity</a></td></tr>
+</tbody></table></div>
+
+<header class="major"><h2>Case Study Architecture</h2></header>
+<div class="table-wrapper"><table><thead><tr><th>Layer</th><th>Responsibility</th><th>Description in ShopEase</th></tr></thead><tbody>
+<tr><td>Presentation Layer</td><td>Handles user interaction</td><td>Implemented through <code>ShopEaseApp</code>, which manages registration, product display and checkout requests.</td></tr>
+<tr><td>Business Logic Layer</td><td>Implements core application behaviour and business rules</td><td>Includes <code>UserService</code>, <code>ProductCatalogService</code> and <code>OrderService</code> for authentication, catalogue operations and order processing.</td></tr>
+<tr><td>Data Access Layer</td><td>Manages data storage and retrieval</td><td>Implemented through <code>DataRepository</code>, which stores and retrieves user, product and order data in the prototype.</td></tr>
+</tbody></table></div>
+
+
+<header class="major"><h2>Scalability and Extensibility</h2></header>
+<p>The ShopEase design uses Dependency Injection to reduce coupling between the business logic and data access components. DataRepository is supplied to UserService, ProductCatalogService and OrderService from outside the classes rather than being created internally. This makes the data-access implementation easier to replace or extend without changing the main business logic.</p>
+<p>Extensibility is also supported through the Strategy and Observer Patterns. Different payment methods implement the same PaymentStrategy interface, while OrderService notifies registered observers without depending on a specific notification method. This allows new payment or notification behaviours to be added with limited changes to existing code.</p>
+
+<header class="major"><h2>Security</h2></header>
+<p>Security is a required quality of the ShopEase design, and the case study specifically identifies authentication as an important requirement. In the proposed architecture, authentication is handled within the Business Logic Layer through UserService.</p>
+<p>In my implementation, I extended this requirement by protecting user passwords rather than storing them in plaintext. I used Python’s hashlib.pbkdf2_hmac() with SHA-256, together with a randomly generated salt, to derive the password hash. I also used hmac.compare_digest() for secure password verification, added input validation during registration, and required successful authentication before checkout can proceed.</p>
+<p>It is worth noting that the implementation is intended to demonstrate how security controls can be incorporated into the architecture, rather than represent a complete production authentication or payment system.</p>
+
+<header class="major"><h2>Implementation Output</h2></header>
+<p>The ShopEase prototype was executed to demonstrate the interaction between the main architectural components. The output shows successful user registration, product listing, payment processing, order completion and Email/SMS notifications.</p>
+<figure style="margin:1.5em 0 2em 0; text-align:center;">
+    <img src="images/User%20Activity%20Output.png"
+         alt="ShopEase User Activity execution output"
+         style="max-width:100%; height:auto; display:block; margin:0 auto;" />
+</figure>
+
+<header class="major"><h2>Unit 9 Reflection</h2></header>
+<p>This unit shifted my focus from designing individual classes to considering the structure of an entire software system. I learned that software architecture defines boundaries between major responsibilities, and that these boundaries affect how easily a system can be maintained, extended and secured. This is consistent with Bass, Clements and Kazman (2021), who explain that architectural decisions influence key system quality attributes and the system’s ability to accommodate change.</p>
+<p>The ShopEase activity helped me see how object-oriented concepts can support architecture in practice. Using separate services, Dependency Injection, polymorphic payment strategies and notification observers showed how components can remain loosely coupled while still working together as one system.</p>
+<p>I also recognised that architectural decisions should be proportionate to the needs of the system. The aim is not to introduce layers, patterns or abstractions simply because they are available, but to use them where they improve scalability, maintainability, security or extensibility.</p>
+
+<header class="major"><h2>Professional Skills Development and Action Plan</h2></header>
+<p>This unit marked a more advanced stage in my development because I applied earlier principles and design patterns based on the needs of the system rather than using them automatically. Bringing these areas together increased my confidence that I had built a strong foundation for progressing to system-level software design.</p>
+<p>As part of my wider reading, I explored whether architectural styles need to be used independently or can be combined within the same system. Chow (2024) discusses combining different architectural styles to create solutions suited to specific requirements. This helped me understand that a hybrid architecture may be appropriate for complex systems where different components have different architectural needs, provided that the additional design and integration complexity is justified. In future work, I would like to experiment with designing a hybrid architecture and evaluate when combining architectural styles provides more value than using a single approach.</p>
+
+<header class="major"><h2>References</h2></header>
+<ul class="alt">
+<li>Bass, L., Clements, P. and Kazman, R. (2021) <em>Software Architecture in Practice.</em> 4th edn. Boston, MA: Addison-Wesley Professional.</li>
+<li>Chow, J. (2024) <em>Software Architecture with Kotlin: Combine Various Architectural Styles to Create Sustainable and Scalable Software Solutions.</em> 1st edn. Birmingham: Packt Publishing Limited.</li>
+</ul>
+
+</div></section></div>
+<footer id="footer"><div class="inner"><ul class="icons">
+<li><a href="https://github.com/Ralemadi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+</ul><ul class="copyright"><li>&copy; MSc Cyber Security e-Portfolio</li><li>University of Essex</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul></div></footer>
+</div>
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/jquery.scrolly.min.js"></script>
+<script src="../../assets/js/jquery.scrollex.min.js"></script>
+<script src="../../assets/js/browser.min.js"></script>
+<script src="../../assets/js/breakpoints.min.js"></script>
+<script src="../../assets/js/util.js"></script>
+<script src="../../assets/js/main.js"></script>
+</body></html>

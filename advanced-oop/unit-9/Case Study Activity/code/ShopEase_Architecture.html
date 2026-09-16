@@ -1,0 +1,398 @@
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">from __future__ import annotations
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+import hashlib
+import hmac
+import re
+import secrets
+from typing import Dict, List, Optional
+
+
+# ============================================================
+# 1. domain models 
+# ============================================================
+
+@dataclass
+class User:
+    user_id: str
+    email: str
+    password_hash: str
+
+
+@dataclass
+class Product:
+    product_id: str
+    name: str
+    price: float
+    stock: int
+
+
+@dataclass
+class Order:
+    order_id: str
+    user_id: str
+    items: Dict[str, int]
+    total: float
+    payment_method: str
+    status: str = "PAID"
+
+
+# ============================================================
+# 2.data access layer 
+# ============================================================
+
+class DataRepository:
+
+    def __init__(self) -> None:
+        self._users: Dict[str, User] = {}
+        self._products: Dict[str, Product] = {}
+        self._orders: List[Order] = []
+
+    # ---------- User data ----------
+
+    def add_user(self, user: User) -> None:
+        if user.email in self._users:
+            raise ValueError("User already exists.")
+        self._users[user.email] = user
+
+    def get_user_by_email(self, email: str) -> Optional[User]:
+        return self._users.get(email)
+
+    # ---------- Product data ----------
+
+    def add_product(self, product: Product) -> None:
+        self._products[product.product_id] = product
+
+    def get_product(self, product_id: str) -> Optional[Product]:
+        return self._products.get(product_id)
+
+    def get_all_products(self) -> List[Product]:
+        return list(self._products.values())
+
+    def update_product_stock(self, product_id: str, new_stock: int) -> None:
+        product = self.get_product(product_id)
+
+        if product is None:
+            raise ValueError("Product not found.")
+
+        if new_stock < 0:
+            raise ValueError("Stock cannot be negative.")
+
+        product.stock = new_stock
+
+    # ---------- Order data ----------
+
+    def add_order(self, order: Order) -> None:
+        self._orders.append(order)
+
+    def get_orders(self) -> List[Order]:
+        return list(self._orders)
+
+
+# ============================================================
+# 3. Business Logic Layer - User Management
+# ============================================================
+
+class UserService:
+
+    EMAIL_PATTERN = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
+    HASH_ITERATIONS = 200_000
+
+    def __init__(self, repository: DataRepository) -> None:
+        # Dependency Injection: the repository is supplied from outside.
+        self._repository = repository
+
+    def _hash_password(self, password: str, salt: bytes) -> str:
+        password_hash = hashlib.pbkdf2_hmac(
+            "sha256",
+            password.encode("utf-8"),
+            salt,
+            self.HASH_ITERATIONS
+        )
+
+        return f"{salt.hex()}:{password_hash.hex()}"
+
+    def _verify_password(self, password: str, stored_value: str) -> bool:
+        salt_hex, stored_hash = stored_value.split(":", 1)
+        salt = bytes.fromhex(salt_hex)
+
+        check_hash = hashlib.pbkdf2_hmac(
+            "sha256",
+            password.encode("utf-8"),
+            salt,
+            self.HASH_ITERATIONS
+        ).hex()
+
+        return hmac.compare_digest(stored_hash, check_hash)
+
+    def register_user(self, email: str, password: str) -> User:
+        email = email.strip().lower()
+
+        if not self.EMAIL_PATTERN.fullmatch(email):
+            raise ValueError("Invalid email address.")
+
+        if len(password) < 12:
+            raise ValueError("Password must contain at least 12 characters.")
+
+        if self._repository.get_user_by_email(email):
+            raise ValueError("User already exists.")
+
+        salt = secrets.token_bytes(16)
+
+        user = User(
+            user_id=secrets.token_hex(8),
+            email=email,
+            password_hash=self._hash_password(password, salt)
+        )
+
+        self._repository.add_user(user)
+        return user
+
+    def authenticate(self, email: str, password: str) -> bool:
+        email = email.strip().lower()
+        user = self._repository.get_user_by_email(email)
+
+        if user is None:
+            return False
+
+        return self._verify_password(password, user.password_hash)
+
+    def get_user_by_email(self, email: str) -> Optional[User]:
+        return self._repository.get_user_by_email(email.strip().lower())
+
+
+# ============================================================
+# 4. Business Logic Layer - Product Catalog
+# ============================================================
+
+class ProductCatalogService:
+
+    def __init__(self, repository: DataRepository) -> None:
+        self._repository = repository
+
+    def add_product(
+        self,
+        product_id: str,
+        name: str,
+        price: float,
+        stock: int
+    ) -> Product:
+
+        if price <= 0:
+            raise ValueError("Product price must be greater than zero.")
+
+        if stock < 0:
+            raise ValueError("Stock cannot be negative.")
+
+        product = Product(
+            product_id=product_id,
+            name=name,
+            price=price,
+            stock=stock
+        )
+
+        self._repository.add_product(product)
+        return product
+
+    def list_products(self) -> List[Product]:
+        return self._repository.get_all_products()
+
+    def search_products(self, keyword: str) -> List[Product]:
+        keyword = keyword.strip().lower()
+
+        return [
+            product
+            for product in self._repository.get_all_products()
+            if keyword in product.name.lower()
+        ]
+
+
+# ============================================================
+# 5. Payment
+# ============================================================
+
+class PaymentStrategy(ABC):
+
+    @abstractmethod
+    def pay(self, amount: float) -> bool:
+        pass
+
+
+class CardPayment(PaymentStrategy):
+
+    def pay(self, amount: float) -> bool:
+        print(f"Card payment approved for £{amount:.2f}")
+        return True
+
+
+class PayPalPayment(PaymentStrategy):
+
+    def pay(self, amount: float) -> bool:
+        print(f"PayPal payment approved for £{amount:.2f}")
+        return True
+
+
+# ============================================================
+# 6. Observer Pattern - Notifications
+# ============================================================
+
+class NotificationObserver(ABC):
+
+    @abstractmethod
+    def update(self, message: str) -> None:
+        pass
+
+
+class EmailNotification(NotificationObserver):
+
+    def update(self, message: str) -> None:
+        print(f"Email notification: {message}")
+
+
+class SMSNotification(NotificationObserver):
+
+    def update(self, message: str) -> None:
+        print(f"SMS notification: {message}")
+
+
+# ============================================================
+# 7. Business Logic Layer - Order Processing
+# ============================================================
+
+class OrderService:
+
+    def __init__(self, repository: DataRepository) -> None:
+        self._repository = repository
+        self._observers: List[NotificationObserver] = []
+
+    def attach_observer(self, observer: NotificationObserver) -> None:
+        self._observers.append(observer)
+
+    def _notify(self, message: str) -> None:
+        for observer in self._observers:
+            observer.update(message)
+
+    def place_order(
+        self,
+        user_id: str,
+        items: Dict[str, int],
+        payment_strategy: PaymentStrategy
+    ) -> Order:
+
+        if not items:
+            raise ValueError("Order must contain at least one item.")
+
+        total = 0.0
+
+        # Validate all items before making changes.
+        for product_id, quantity in items.items():
+
+            if quantity <= 0:
+                raise ValueError("Product quantity must be greater than zero.")
+
+            product = self._repository.get_product(product_id)
+
+            if product is None:
+                raise ValueError(f"Product {product_id} was not found.")
+
+            if product.stock < quantity:
+                raise ValueError(f"Insufficient stock for {product.name}.")
+
+            total += product.price * quantity
+
+        if not payment_strategy.pay(total):
+            raise ValueError("Payment failed.")
+
+        # Update stock only after all validation and payment succeed.
+        for product_id, quantity in items.items():
+            product = self._repository.get_product(product_id)
+            self._repository.update_product_stock(
+                product_id,
+                product.stock - quantity
+            )
+
+        order = Order(
+            order_id=secrets.token_hex(6),
+            user_id=user_id,
+            items=items.copy(),
+            total=round(total, 2),
+            payment_method=payment_strategy.__class__.__name__
+        )
+
+        self._repository.add_order(order)
+
+        self._notify(
+            f"Order {order.order_id} was successfully processed."
+        )
+
+        return order
+
+
+# ============================================================
+# 8. Presentation layer
+# ============================================================
+
+class ShopEaseApp:
+
+    def __init__(
+        self,
+        user_service: UserService,
+        product_service: ProductCatalogService,
+        order_service: OrderService
+    ) -> None:
+        self._user_service = user_service
+        self._product_service = product_service
+        self._order_service = order_service
+
+    def register(self, email: str, password: str) -> User:
+        user = self._user_service.register_user(email, password)
+        print(f"Registered user: {user.email}")
+        return user
+
+    def show_products(self) -> None:
+        print("\nAvailable products:")
+
+        for product in self._product_service.list_products():
+            print(
+                f"- {product.product_id}: {product.name} "
+                f"| £{product.price:.2f} | Stock: {product.stock}"
+            )
+
+    def checkout(
+        self,
+        email: str,
+        password: str,
+        items: Dict[str, int],
+        payment_strategy: PaymentStrategy
+    ) -> Order:
+
+        if not self._user_service.authenticate(email, password):
+            raise PermissionError("Authentication failed.")
+
+        user = self._user_service.get_user_by_email(email)
+
+        if user is None:
+            raise PermissionError("User not found.")
+
+        order = self._order_service.place_order(
+            user.user_id,
+            items,
+            payment_strategy
+        )
+
+        print(
+            f"Order {order.order_id} completed. "
+            f"Total: £{order.total:.2f}"
+        )
+
+        return order
+</code></pre>
+</body>
