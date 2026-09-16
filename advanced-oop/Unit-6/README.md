@@ -34,10 +34,10 @@ Seven `unittest` cases covered normal transactions, concurrent deposits and with
 | Artefact | Purpose |
 |---|---|
 | [Unit 6 Portfolio Page](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/unit-6.html) | Main e-Portfolio page for Unit 6 |
-| [Individual Coding Exercise](Individual%20Coding%20Exercise/README.md) | Detailed implementation and testing evidence |
-| [BankAccount](Individual%20Coding%20Exercise/banking-system/banking_system.html) | Thread-safe banking core |
-| [TransactionSimulator](Individual%20Coding%20Exercise/banking-system/transaction_simulator.html) | Concurrent-user simulation |
-| [Unit Tests](Individual%20Coding%20Exercise/banking-system/test_banking_system.html) | Seven functional and concurrency tests |
+| [Individual Coding Exercise](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/Individual%20Coding%20Exercise/README.md) | Detailed implementation and testing evidence |
+| [BankAccount](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/Individual%20Coding%20Exercise/banking-system/banking_system.html) | Thread-safe banking core |
+| [TransactionSimulator](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/Individual%20Coding%20Exercise/banking-system/transaction_simulator.html) | Concurrent-user simulation |
+| [Unit Tests](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/Individual%20Coding%20Exercise/banking-system/test_banking_system.html) | Seven functional and concurrency tests |
 
 ## Architecture and Execution Flow
 
