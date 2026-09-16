@@ -33,7 +33,8 @@ This module explores advanced object-oriented principles, secure software design
 | **Unit 3** | Design Patterns I – Creational Patterns | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-3/unit-3.html) | [Browse Files](advanced-oop/unit-3/) |
 | **Unit 4** | Design Patterns II – Structural Patterns | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/unit-4.html) | [Browse Files](advanced-oop/unit-4/) |
 | **Unit 5** | Design Patterns III – Behavioural Patterns | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-5/unit-5.html) | [Browse Files](advanced-oop/unit-5/) |
-
+| **Unit 6** | Concurrency and Parallelism in Object-Oriented Design | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/unit-6.html) | [Browse Files](advanced-oop/unit-6/) |
+| **Unit 7** | Secure Coding Practices in Object-Oriented Programming | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-7/unit-7.html) | [Browse Files](advanced-oop/unit-7/) |
 ### Module Documentation
 
 The module repository contains individual unit pages, practical exercises, source code, screenshots, supporting documents and reflections.
