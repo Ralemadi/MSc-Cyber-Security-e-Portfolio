@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+    Forty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license
+-->
+<html lang="en">
+<head>
+    <title>Unit 10 | MSc Cyber Security e-Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="MSc Cyber Security e-Portfolio, University of Essex" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <style>
+        #main .inner > p { margin-bottom: 1.15em; }
+        #main .inner > header.major { margin-bottom: 1.1em; }
+        #main .inner > header.major:not(:first-child) { margin-top: 1.8em; }
+        #main .inner > ul { margin-bottom: 1.5em; }
+        #main .inner > .table-wrapper { margin-top: 0.5em; margin-bottom: 1.5em; }
+        .evidence { margin-top: 1.2em; margin-bottom: 2em; }
+        .evidence figure { margin: 1.2em 0 1.8em 0; }
+        .evidence img {
+            display:block; width:100%; max-width:1200px; height:auto;
+            margin-left:auto; margin-right:auto;
+            border:1px solid rgba(212,212,255,0.15);
+        }
+        .evidence figcaption { margin-top:0.6em; font-size:0.9em; opacity:0.85; }
+        code { white-space: normal; }
+    </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+<header id="header">
+    <a href="../../index.html" class="logo"><strong>MSc Cyber Security</strong><span>e-Portfolio</span></a>
+    <nav><a href="#menu">Menu</a></nav>
+</header>
+
+<nav id="menu"><ul class="links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../advanced-oop.html">Module Overview</a></li>
+    <li><a href="../unit-1/unit-1.html">Unit 1</a></li>
+    <li><a href="../unit-2/unit-2.html">Unit 2</a></li>
+    <li><a href="../unit-3/unit-3.html">Unit 3</a></li>
+    <li><a href="../unit-4/unit-4.html">Unit 4</a></li>
+    <li><a href="../unit-5/unit-5.html">Unit 5</a></li>
+    <li><a href="../unit-6/unit-6.html">Unit 6</a></li>
+    <li><a href="../unit-7/unit-7.html">Unit 7</a></li>
+    <li><a href="../unit-8/unit-8.html">Unit 8</a></li>
+    <li><a href="../unit-9/unit-9.html">Unit 9</a></li>
+    <li><a href="../unit-10/unit-10.html">Unit 10</a></li>
+    <li><a href="../unit-11/unit-11.html">Unit 11</a></li>
+    <li><a href="../unit-12/unit-12.html">Unit 12</a></li>
+</ul></nav>
+
+<section id="banner" class="style2"><div class="inner">
+<header class="major"><h1>Unit 10: Test-Driven Development (TDD) and Behaviour Driven Development (BDD)</h1></header>
+<div class="content"><p>Advanced Object-Oriented Design and Programming</p></div>
+</div></section>
+
+<div id="main" class="alt"><section id="one"><div class="inner">
+
+<header class="major"><h2>Unit Summary</h2></header>
+<p>Unit 10 focuses on Test-Driven Development (TDD) and unit testing as approaches for improving software quality, reducing defects and supporting maintainability. The unit introduces the idea of defining expected behaviour through tests before completing the implementation, then refining the code while preserving tested behaviour.</p>
+<p>The practical activity applies these principles to a secure e-learning platform using object-oriented software architecture. The case study combines architectural design, implementation, unit testing, refactoring and security considerations within a single development exercise.</p>
+
+<header class="major"><h2>Learning Outcomes</h2></header>
+<p>By the end of this unit, I was able to:</p>
+<ul>
+<li>Explain the principles and benefits of Test-Driven Development (TDD).</li><li>Recognise the importance of unit testing in improving software quality and reducing defects.</li><li>Apply TDD to an object-oriented software component.</li><li>Write unit tests for public methods and relevant failure conditions.</li><li>Refactor internal code while preserving tested behaviour.</li><li>Recognise how modular architecture can improve testability and maintainability.</li>
+</ul>
+
+<header class="major"><h2>Case Study Activity</h2></header>
+<p>The case study required the design, implementation and testing of a secure e-learning platform. I selected layered architecture because separating presentation, business logic and data access responsibilities provides a clear structure for maintaining and extending the system. It also supports security by keeping authentication and business rules separate from the presentation and data-storage responsibilities.</p>
+<p>The proposed business modules are User Management, Course Management and Enrolment Management. This modular structure allows individual parts of the platform to be developed and modified independently, while the separation between layers provides a foundation for scaling components as the system grows.</p>
+<p>For the practical implementation, I selected the User Management module. The final UserManagementService provides register_user(), authenticate() and get_user().</p>
+
+<header class="major"><h2>High-Level Architecture Design</h2></header>
+<p>Figure 1 presents the proposed three-layer architecture for the e-learning platform. For this formative activity, only the User Management module was implemented and tested. Course Management and Enrolment Management remain part of the proposed architecture.</p>
+<div class="evidence"><figure>
+<img src="images/high-level%20layered%20architecture.png" alt="Proposed high-level layered architecture for the e-learning platform" />
+<figcaption>Figure 1. Proposed high-level layered architecture for the e-learning platform.</figcaption>
+</figure></div>
+<p><strong>Note: Elements shown in red are part of the proposed architecture and are included for illustration only. They were not implemented in the current activity. The practical implementation focused on the User Management module.</strong></p>
+
+<header class="major"><h2>Artefacts</h2></header>
+<div class="table-wrapper"><table>
+<thead><tr><th>Artefact</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/tree/main/advanced-oop/unit-10/Case%20Study%20Activity/">Case Study README</a></td><td>Architecture, implementation, security and testing explanation</td></tr>
+<tr><td><a href="https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/Case%20Study%20Activity/code/user_management.html">User Management Code</a></td><td>Final object-oriented implementation</td></tr>
+<tr><td><a href="https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/Case%20Study%20Activity/code/user_management_red.html">Red-Phase User Management Code</a></td><td>Pre-implementation Red-stage example</td></tr>
+<tr><td><a href="https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/Case%20Study%20Activity/tests/test_user_management.html">Unit Tests</a></td><td>Tests for all public methods</td></tr>
+<tr><td><a href="https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/Case%20Study%20Activity/tests/test_user_management_red.html">Red-Phase Test</a></td><td>Focused failing registration test</td></tr>
+<tr><td><a href="images/test_results.png">Test Results</a></td><td>Successful test execution image</td></tr>
+</tbody></table></div>
+
+<header class="major"><h2>Secure User Management</h2></header>
+<p>The implementation validates email addresses, enforces a minimum 12-character password policy, prevents duplicate registration and stores password hashes generated using PBKDF2-HMAC-SHA256 with a unique random salt. Authentication uses constant-time comparison when verifying password hashes rather than comparing plaintext passwords.</p>
+
+<header class="major"><h2>TDD and Unit Testing</h2></header>
+<p>The test suite defines the expected behaviour for all three public methods. It includes successful registration and authentication as well as failure conditions such as invalid email addresses, weak passwords, duplicate users, incorrect passwords and unknown users.</p>
+<p>The final suite contains nine unit tests, and all tests pass successfully. In the final implementation, internal responsibilities such as email normalisation, password hashing and password verification are separated into focused private helper methods.</p>
+<p>Meszaros (2007) identifies ease of maintenance as an important goal of automated testing and discusses organising and refactoring tests to keep them understandable and maintainable as the system evolves. In this activity, the tests are organised around the public behaviours of register_user(), authenticate() and get_user().</p>
+
+<header class="major"><h2>Sample of the TDD Cycle</h2></header>
+<p>To demonstrate the TDD sequence, register_user() is used as a focused example of the Red–Green–Refactor cycle. The sequence reflects the test-first approach described by Beck (2002), where failing tests are followed by working implementation and refactoring.</p>
+
+<h3>Red – Failing Test</h3>
+<p>A single registration test was used to demonstrate the Red stage of TDD. The test was executed before the required registration behaviour was implemented. It failed because register_user() returned None rather than the expected User object, showing that the required behaviour had not yet been satisfied.</p>
+<div class="evidence"><figure>
+<img src="Case%20Study%20Activity/images/red_test_results.png" alt="Failing registration test demonstrating the Red stage of TDD" />
+<figcaption>Figure 2. Failing registration test demonstrating the Red stage of TDD.</figcaption>
+</figure></div>
+
+<h3>Green – Passing Implementation</h3>
+<p>The required registration behaviour was then implemented and the tests were run again. The final execution shows all nine unit tests passing successfully, confirming that the implemented User Management behaviour satisfies the test suite.</p>
+<div class="evidence"><figure>
+<img src="images/test_results.png" alt="Successful execution of the final Unit 10 unit test suite" />
+<figcaption>Figure 3. Successful execution of the final unit test suite demonstrating the Green stage.</figcaption>
+</figure></div>
+
+<h3>Refactor – Improve Structure Without Changing Behaviour</h3>
+<p>After the required behaviour was working, the internal implementation was reorganised into focused private helper methods for email normalisation, password hashing and password verification. The full test suite was then run again to confirm that these internal changes did not alter the expected public behaviour. The final passing test results provide validation that the refactored implementation still satisfies the existing tests.</p>
+
+<header class="major"><h2>Reflection</h2></header>
+<p>This activity helped me understand TDD as more than a testing technique. Defining expected behaviour first encouraged me to consider both successful and failure conditions before completing the implementation.</p>
+<p>The Red–Green–Refactor exercise showed how tests can guide development and support safer refactoring. This is particularly useful in security-related software because behaviours such as input validation and authentication failures can be tested explicitly and rechecked after code changes, helping to reduce the risk of security regressions.</p>
+<p>The activity also reinforced the relationship between modular design and testability. Focusing on the User Management service made its behaviour easier to test independently, while refactoring showed how internal code can change without altering expected behaviour. This reflects Freeman and Pryce (2009), who show how tests can help guide software behaviour and object-oriented structure.</p>
+
+<header class="major"><h2>Professional Skills Development and Action Plan</h2></header>
+<p>This activity strengthened my ability to use unit tests throughout development rather than only as a final check.</p>
+<p>In future development work, I intend to follow a more structured testing plan by defining expected behaviour and test cases early, covering both successful and failure conditions, and rerunning tests after code changes or refactoring. This will help me make testing a consistent part of the development process rather than an activity performed only at the end.</p>
+
+<header class="major"><h2>References</h2></header>
+<ul class="alt">
+<li>Beck, K. (2002) <em>Test Driven Development: By Example</em>. Boston, MA: Addison-Wesley.</li>
+<li>Freeman, S. and Pryce, N. (2009) <em>Growing Object-Oriented Software, Guided by Tests</em>. Boston, MA: Addison-Wesley.</li>
+<li>Meszaros, G. (2007) <em>xUnit Test Patterns: Refactoring Test Code</em>. Boston, MA: Addison-Wesley.</li>
+</ul>
+
+</div></section></div>
+
+<footer id="footer"><div class="inner">
+<ul class="icons">
+<li><a href="https://github.com/Ralemadi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+</ul>
+<ul class="copyright">
+<li>&copy; MSc Cyber Security e-Portfolio</li>
+<li>University of Essex</li>
+<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+</ul>
+</div></footer>
+
+</div>
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/jquery.scrolly.min.js"></script>
+<script src="../../assets/js/jquery.scrollex.min.js"></script>
+<script src="../../assets/js/browser.min.js"></script>
+<script src="../../assets/js/breakpoints.min.js"></script>
+<script src="../../assets/js/util.js"></script>
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>

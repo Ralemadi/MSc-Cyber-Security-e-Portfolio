@@ -1,0 +1,140 @@
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">
+import sys
+import unittest
+from pathlib import Path
+
+CODE_DIR = Path(__file__).resolve().parents[1] / "code"
+sys.path.insert(0, str(CODE_DIR))
+
+from user_management import UserManagementService
+
+
+class TestUserManagementService(unittest.TestCase):
+
+    def setUp(self) -> None:
+        self.service = UserManagementService()
+
+    # ------------------------------------------------------------
+    # register_user()
+    # ------------------------------------------------------------
+
+    def test_register_user_success(self):
+        user = self.service.register_user(
+            "user1@example.com",
+            "SecurePassword123!"
+        )
+
+        self.assertEqual(
+            user.email,
+            "user1@example.com"
+        )
+
+        # The plaintext password must not be stored.
+        self.assertNotIn(
+            "SecurePassword123!",
+            user.password_hash
+        )
+
+    def test_register_user_rejects_invalid_email(self):
+        with self.assertRaises(ValueError):
+            self.service.register_user(
+                "invalid-email",
+                "SecurePassword123!"
+            )
+
+    def test_register_user_rejects_weak_password(self):
+        with self.assertRaises(ValueError):
+            self.service.register_user(
+                "user1@example.com",
+                "short"
+            )
+
+    def test_register_user_rejects_duplicate_email(self):
+        self.service.register_user(
+            "user1@example.com",
+            "SecurePassword123!"
+        )
+
+        with self.assertRaises(ValueError):
+            self.service.register_user(
+                "user1@example.com",
+                "AnotherSecurePassword123!"
+            )
+
+    # ------------------------------------------------------------
+    # authenticate()
+    # ------------------------------------------------------------
+
+    def test_authenticate_returns_true_for_valid_credentials(self):
+        self.service.register_user(
+            "user1@example.com",
+            "SecurePassword123!"
+        )
+
+        self.assertTrue(
+            self.service.authenticate(
+                "user1@example.com",
+                "SecurePassword123!"
+            )
+        )
+
+    def test_authenticate_returns_false_for_wrong_password(self):
+        self.service.register_user(
+            "user1@example.com",
+            "SecurePassword123!"
+        )
+
+        self.assertFalse(
+            self.service.authenticate(
+                "user1@example.com",
+                "WrongPassword123!"
+            )
+        )
+
+    def test_authenticate_returns_false_for_unknown_user(self):
+        self.assertFalse(
+            self.service.authenticate(
+                "user2@example.com",
+                "SecurePassword123!"
+            )
+        )
+
+    # ------------------------------------------------------------
+    # get_user()
+    # ------------------------------------------------------------
+
+    def test_get_user_returns_registered_user(self):
+        registered_user = self.service.register_user(
+            "user1@example.com",
+            "SecurePassword123!"
+        )
+
+        retrieved_user = self.service.get_user(
+            "user1@example.com"
+        )
+
+        self.assertEqual(
+            retrieved_user,
+            registered_user
+        )
+
+    def test_get_user_returns_none_for_unknown_user(self):
+        self.assertIsNone(
+            self.service.get_user(
+                "user12@example.com"
+            )
+        )
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
+</code></pre>
+</body>
