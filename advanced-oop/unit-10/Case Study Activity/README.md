@@ -51,11 +51,11 @@ For the practical implementation, I selected the User Management module. The fin
 
 The final implementation is available here:
 
-- [user_management.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/code/user_management.html)
+- [user_management.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/Case%20Study%20Activity/code/user_management.html)
 
 The focused Red-stage implementation is available here:
 
-- [user_management_red.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/code/user_management_red.html)
+- [user_management_red.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/Case%20Study%20Activity/code/user_management_red.html)
 
 ## Secure User Management
 
@@ -71,7 +71,7 @@ Meszaros (2007) identifies ease of maintenance as an important goal of automated
 
 The final unit tests are available here:
 
-- [test_user_management.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/tests/test_user_management.html)
+- [test_user_management.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/Case%20Study%20Activity/tests/test_user_management.html)
 
 ## Sample of the TDD Cycle
 
@@ -81,7 +81,7 @@ To demonstrate the TDD sequence, register_user() is used as a focused example of
 
 A single registration test was used to demonstrate the Red stage of TDD. The test was executed before the required registration behaviour was implemented. It failed because register_user() returned None rather than the expected User object, showing that the required behaviour had not yet been satisfied.
 
-- [Red-stage test code](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/tests/test_user_management_red.html)
+- [Red-stage test code](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/Case%20Study%20Activity/tests/test_user_management_red.html)
 
 ![Red Test Result](images/red_test_results.png)
 
