@@ -44,7 +44,7 @@ In my follow-up response, I agreed that Strategy can therefore provide a present
 |---|---|
 | [unit-8.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-8/unit-8.html) | Unit 8 e-Portfolio page |
 | [Collaborative Discussion ](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/tree/main/advanced-oop/unit-8/Collaborative%20Discussion/) | Detailed discussion, peer feedback and evidence |
-| [Collaborative Discussion PDF](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-8/Collaborative%20Discussion/Unit%208%20Collaborative%20Discussion%204%20%E2%80%93%20Refactoring%20and%20Code%20Smells.pdf) | Final written discussion |
+| [Collaborative Discussion PDF](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-8/Collaborative%20Discussion/PDF/Unit%208%20Collaborative%20Discussion%204%20%E2%80%93%20Refactoring%20and%20Code%20Smells.pdf) | Final written discussion |
 
 
 
