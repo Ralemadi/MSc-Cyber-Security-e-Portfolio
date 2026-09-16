@@ -41,7 +41,7 @@ The identified weaknesses were mapped to the following categories:
 | Artefact | Description |
 |---|---|
 | [Collaborative Discussion 3 PDF](Collaborative%20Discussion/PDF/Unit%207%20Collaborative%20Discussion%203.pdf) | Full discussion submission, refactored code and execution evidence |
-| [Authentication System](Collaborative%20Discussion/code/Authentication_System.html) | Refactored authentication source code |
+| [Authentication System](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-7/Collaborative%20Discussion/code/Authentication_System.html) | Refactored authentication source code |
 | [Collaborative Discussion ](Collaborative%20Discussion/) | Summary of the discussion, implementation and peer feedback |
 | [Unit 7 e-Portfolio Page](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-7/unit-7.html) | Unit summary, artefacts, reflection and peer feedback |
 
