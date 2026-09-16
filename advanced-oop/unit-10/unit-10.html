@@ -80,8 +80,7 @@
 <p>Figure 1 presents the proposed three-layer architecture for the e-learning platform. For this formative activity, only the User Management module was implemented and tested. Course Management and Enrolment Management remain part of the proposed architecture.</p>
 <div class="evidence"><figure>
 <img src="images/high-level%20layered%20architecture.png" alt="Proposed high-level layered architecture for the e-learning platform" />
-<figcaption>Figure 1. Proposed high-level layered architecture for the e-learning platform.</figcaption>
-</figure></div>
+</div>
 <p><strong>Note: Elements shown in red are part of the proposed architecture and are included for illustration only. They were not implemented in the current activity. The practical implementation focused on the User Management module.</strong></p>
 
 <header class="major"><h2>Artefacts</h2></header>
@@ -111,15 +110,13 @@
 <p>A single registration test was used to demonstrate the Red stage of TDD. The test was executed before the required registration behaviour was implemented. It failed because register_user() returned None rather than the expected User object, showing that the required behaviour had not yet been satisfied.</p>
 <div class="evidence"><figure>
 <img src="Case%20Study%20Activity/images/red_test_results.png" alt="Failing registration test demonstrating the Red stage of TDD" />
-<figcaption>Figure 2. Failing registration test demonstrating the Red stage of TDD.</figcaption>
-</figure></div>
+</div>
 
 <h3>Green – Passing Implementation</h3>
 <p>The required registration behaviour was then implemented and the tests were run again. The final execution shows all nine unit tests passing successfully, confirming that the implemented User Management behaviour satisfies the test suite.</p>
 <div class="evidence"><figure>
 <img src="images/test_results.png" alt="Successful execution of the final Unit 10 unit test suite" />
-<figcaption>Figure 3. Successful execution of the final unit test suite demonstrating the Green stage.</figcaption>
-</figure></div>
+</div>
 
 <h3>Refactor – Improve Structure Without Changing Behaviour</h3>
 <p>After the required behaviour was working, the internal implementation was reorganised into focused private helper methods for email normalisation, password hashing and password verification. The full test suite was then run again to confirm that these internal changes did not alter the expected public behaviour. The final passing test results provide validation that the refactored implementation still satisfies the existing tests.</p>
