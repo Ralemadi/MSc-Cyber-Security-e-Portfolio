@@ -1,0 +1,21 @@
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">BOOK_DISCOUNT = 0.9
+ELECTRONICS_DISCOUNT = 0.8
+def calculate_total_price(items):
+total = 0
+for item in items:
+if item["type"] == "book":
+total += item["price"] * BOOK_DISCOUNT
+elif item["type"] == "electronics":
+total += item["price"] * ELECTRONICS_DISCOUNT
+else:
+total += item["price"]
+return total</code></pre>
+</body>

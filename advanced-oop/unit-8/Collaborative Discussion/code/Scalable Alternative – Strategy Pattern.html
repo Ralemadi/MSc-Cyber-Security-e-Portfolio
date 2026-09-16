@@ -1,0 +1,50 @@
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">from abc import ABC, abstractmethod
+class DiscountStrategy(ABC):
+@abstractmethod
+def apply(self, price):
+pass
+class BookDiscount(DiscountStrategy):
+DISCOUNT_FACTOR = 0.9
+def apply(self, price):
+# Apply a 10% discount to book items
+return price * self.DISCOUNT_FACTOR
+class ElectronicsDiscount(DiscountStrategy):
+DISCOUNT_FACTOR = 0.8
+def apply(self, price):
+# Apply a 20% discount to electronics items
+return price * self.DISCOUNT_FACTOR
+class NoDiscount(DiscountStrategy):
+def apply(self, price):
+# Return the original price
+return price
+# Create one default strategy
+NO_DISCOUNT = NoDiscount()
+# Map each product type to its corresponding discount strategy
+DISCOUNT_STRATEGIES = {
+"book": BookDiscount(),
+"electronics": ElectronicsDiscount()
+}
+def calculate_total_price(items):
+total = 0
+for item in items:
+# If the item type is not found, use NoDiscount
+strategy = DISCOUNT_STRATEGIES.get(
+item["type"],
+NO_DISCOUNT
+)
+total += strategy.apply(
+item["price"]
+)
+return total
+
+
+</code></pre>
+</body>
