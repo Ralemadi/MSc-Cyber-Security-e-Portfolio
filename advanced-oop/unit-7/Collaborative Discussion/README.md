@@ -75,7 +75,7 @@ In response to my initial post, Séba highlighted the value of mapping the ident
 ## Files
 
 - [Unit 7 Collaborative Discussion 3 PDF](PDF/Unit%207%20Collaborative%20Discussion%203.pdf)
-- [Authentication_System.html](code/Authentication_System.html)
+- [Authentication_System.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-7/Collaborative%20Discussion/code/Authentication_System.html)
 - [Unit 7 e-Portfolio Page](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-7/unit-7.html)
 - [Return to Unit 7 ](../)
 
