@@ -1,0 +1,291 @@
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">import re
+import time
+import bcrypt
+
+# Maximum number of failed login attempts before temporary lockout
+MAX_ATTEMPTS = 5
+
+# Lockout duration in seconds
+LOCKOUT_SECONDS = 60
+
+# Username validation:
+# 3 to 50 characters
+# Letters, numbers, underscore, dot and hyphen only
+USERNAME_PATTERN = re.compile(r"^[A-Za-z0-9_.-]{3,50}$")
+
+class User:
+    # Represent a user while keeping the password hash internal
+
+    def __init__(self, username: str, password_hash: bytes) -> None:
+        self.username = username
+
+        # Store only the password hash, not the plaintext password
+        self._password_hash = password_hash
+
+    def verify_password(self, password: str) -> bool:
+        # Check the supplied password against the stored bcrypt hash
+
+        return bcrypt.checkpw(
+            password.encode("utf-8"),
+            self._password_hash
+        )
+
+class AuthenticationSystem:
+    # Manage user registration, authentication and simple login throttling
+
+    def __init__(self) -> None:
+
+        # Store username
+        self.users: dict[str, User] = {}
+
+        # Track failed login attempts for each username
+        self.failed_attempts: dict[str, int] = {}
+
+        # Store the time at which each temporary lockout expires
+        self.lockout_until: dict[str, float] = {}
+
+    def _validate_username(self, username: str) -> str:
+        # Validate the username before it is used
+
+        # Reject non string usernames
+        if not isinstance(username, str):
+            raise ValueError("Invalid username.")
+
+        # Remove leading and trailing spaces
+        username = username.strip()
+
+        # Reject usernames that do not match the allowed format
+        if not USERNAME_PATTERN.fullmatch(username):
+            raise ValueError("Invalid username.")
+
+        return username
+
+    def _validate_password(self, password: str) -> None:
+
+        # The password must be a string and contain at least 12 characters
+        if not isinstance(password, str) or len(password) < 12:
+            raise ValueError(
+                "Password must contain at least 12 characters."
+            )
+
+    def add_user(self, username: str, password: str) -> None:
+
+        # Validate registration input
+        username = self._validate_username(username)
+        self._validate_password(password)
+
+        # Prevent an existing username from being overwritten
+        if username in self.users:
+            raise ValueError("User already exists.")
+
+        # Hash and salt the password using bcrypt
+        password_hash = bcrypt.hashpw(
+            password.encode("utf-8"),
+            bcrypt.gensalt()
+        )
+
+        # Store the new User object
+        self.users[username] = User(
+            username,
+            password_hash
+        )
+
+    def _register_failure(
+        self,
+        username: str,
+        now: float
+    ) -> None:
+        # Track consecutive authentication failures and apply a temporary lockout
+
+        # Increase the failed attempt counter
+        count = self.failed_attempts.get(
+            username,
+            0
+        ) + 1
+
+        # Lock the account when the limit is reached
+        if count >= MAX_ATTEMPTS:
+
+            self.lockout_until[username] = (
+                now + LOCKOUT_SECONDS
+            )
+
+            # Reset the counter when the lockout begins
+            self.failed_attempts[username] = 0
+
+        else:
+            self.failed_attempts[username] = count
+
+    def authenticate(
+        self,
+        username: str,
+        password: str
+    ) -> bool:
+        # Authenticate a user without revealing whether the username or password was incorrect
+
+        # Validate the username
+        try:
+            username = self._validate_username(username)
+
+        except ValueError:
+            return False
+
+        # Reject non string passwords
+        if not isinstance(password, str):
+            return False
+
+        now = time.time()
+
+        # Check whether the account is temporarily locked
+        if now < self.lockout_until.get(username, 0):
+            return False
+
+        # Find the user
+        user = self.users.get(username)
+
+        # Unknown usernames fail safely
+        if user is None:
+            return False
+
+        # Verify the supplied password against the bcrypt hash
+        if user.verify_password(password):
+
+            # Reset failed attempts after successful authentication
+            self.failed_attempts[username] = 0
+
+            # Remove any previous lockout entry
+            self.lockout_until.pop(username, None)
+
+            return True
+
+        # Record an unsuccessful authentication attempt
+        self._register_failure(
+            username,
+            now
+        )
+
+        return False
+
+# Testing
+
+if __name__ == "__main__":
+
+    auth = AuthenticationSystem()
+
+    # Test 1:
+    # Register a new user
+
+    auth.add_user(
+        "admin",
+        "Password123!"
+    )
+
+    print("First registration successful.")
+    print(
+        "Number of users:",
+        len(auth.users)
+    )
+
+    # Test 2:
+    # Try to register the SAME username again
+
+    try:
+        auth.add_user(
+            "admin",
+            "NewPassword456!"
+        )
+
+        print("Second registration successful.")
+
+    except ValueError as error:
+        print(
+            "Second registration rejected:",
+            error
+        )
+
+    # Confirm that only one user exists
+    print(
+        "Number of users after second attempt:",
+        len(auth.users)
+    )
+
+    # Test 3:
+    # Authenticate using the correct password
+
+    print(
+        "Correct password:",
+        auth.authenticate(
+            "admin",
+            "Password123!"
+        )
+    )
+
+    # Test 4:
+    # Authenticate using an incorrect password
+    print(
+        "Incorrect password:",
+        auth.authenticate(
+            "admin",
+            "WrongPassword123!"
+        )
+    )
+    # Test 5: 
+    # Reset authentication state and test account lockout
+    auth.failed_attempts["admin"] = 0
+    auth.lockout_until.pop("admin", None)
+
+    print("\nTesting account lockout...")
+
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+
+        result = auth.authenticate(
+            "admin",
+            "WrongPassword123!"
+        )
+
+        print(
+            f"Failed attempt {attempt}:",
+            result
+        )
+
+    # Test 6: 
+    # Try the correct password while the account is locked
+    result = auth.authenticate(
+        "admin",
+        "Password123!"
+    )
+
+    print(
+        "\nCorrect password during lockout:",
+        result
+    )
+
+    # Test 7:
+    # Wait for the lockout period to expire and try the correct password after the lockout expires
+    print(
+        f"\nWaiting {LOCKOUT_SECONDS} seconds "
+        "for the lockout to expire..."
+    )
+
+    time.sleep(LOCKOUT_SECONDS + 1)
+
+    # Try the correct password after the lockout expires
+    result = auth.authenticate(
+        "admin",
+        "Password123!"
+    )
+    print(
+        "Correct password after lockout:",
+        result
+    )
+
+</code></pre>
+</body>

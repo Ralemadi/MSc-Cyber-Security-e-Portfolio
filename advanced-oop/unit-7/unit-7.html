@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+    Forty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license
+-->
+<html lang="en">
+<head>
+    <title>Unit 7 | MSc Cyber Security e-Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="MSc Cyber Security e-Portfolio, University of Essex" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <style>
+        #main .inner > p { margin-bottom: 1.15em; }
+        #main .inner > header.major { margin-bottom: 1.1em; }
+        #main .inner > header.major:not(:first-child) { margin-top: 1.8em; }
+        #main .inner > ul { margin-bottom: 1.5em; }
+        #main .inner > .table-wrapper { margin-top: 0.5em; margin-bottom: 1.5em; }
+        .peer-feedback { margin-top: 1.2em; margin-bottom: 2em; }
+        .peer-feedback figure { margin: 1.2em 0 1.8em 0; }
+        .peer-feedback img { display:block; width:100%; max-width:1200px; height:auto; margin-left:auto; margin-right:auto; border:1px solid rgba(212,212,255,0.15); }
+        .peer-feedback figcaption { margin-top:0.6em; font-size:0.9em; opacity:0.85; }
+    </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+<header id="header">
+    <a href="../../index.html" class="logo"><strong>MSc Cyber Security</strong><span>e-Portfolio</span></a>
+    <nav><a href="#menu">Menu</a></nav>
+</header>
+<nav id="menu"><ul class="links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../advanced-oop.html">Module Overview</a></li>
+    <li><a href="../unit-1/unit-1.html">Unit 1</a></li>
+    <li><a href="../unit-2/unit-2.html">Unit 2</a></li>
+    <li><a href="../unit-3/unit-3.html">Unit 3</a></li>
+    <li><a href="../unit-4/unit-4.html">Unit 4</a></li>
+    <li><a href="../unit-5/unit-5.html">Unit 5</a></li>
+    <li><a href="../unit-6/unit-6.html">Unit 6</a></li>
+    <li><a href="../unit-7/unit-7.html">Unit 7</a></li>
+    <li><a href="../unit-8/unit-8.html">Unit 8</a></li>
+    <li><a href="../unit-9/unit-9.html">Unit 9</a></li>
+    <li><a href="../unit-10/unit-10.html">Unit 10</a></li>
+    <li><a href="../unit-11/unit-11.html">Unit 11</a></li>
+    <li><a href="../unit-12/unit-12.html">Unit 12</a></li>
+
+
+</ul></nav>
+<section id="banner" class="style2"><div class="inner">
+<header class="major"><h1>Unit 7: Secure Coding Practices in Object-Oriented Programming</h1></header>
+<div class="content"><p>Advanced Object-Oriented Design and Programming</p></div>
+</div></section>
+<div id="main" class="alt"><section id="one"><div class="inner">
+<header class="major"><h2>Unit Summary</h2></header>
+<p>This unit developed my understanding of security as part of software design rather than something added after development is complete. I learned that weaknesses in object-oriented applications can arise from both technical vulnerabilities and insecure implementation choices, and that secure coding requires careful control of how data is accepted, processed and used within an application.</p>
+<p>The practical work applied these ideas to a user authentication system. The original implementation contained weaknesses related to plaintext password storage, weak password requirements, missing input validation and unrestricted authentication attempts. Through the refactoring and collaborative discussion, I also examined duplicate username registration as an application-logic security risk and critically assessed the SQL-injection example provided in the task.</p>
+<header class="major"><h2>Learning Outcomes</h2></header>
+<p>After completing this unit, I was able to:</p>
+<ul>
+<li>Explain why secure coding should be considered during software design and implementation.</li>
+<li>Identify security weaknesses and insecure implementation choices in existing application code.</li>
+<li>Apply secure coding techniques including input validation, password hashing and authentication controls.</li>
+<li>Refactor vulnerable code while preserving its intended functionality.</li>
+<li>Analyse authentication logic for application-level security risks, such as duplicate username registration and unrestricted login attempts.</li>
+<li>Use MITRE CWE and OWASP guidance to support identified weaknesses and appropriate mitigations.</li>
+</ul>
+<header class="major"><h2>Artefacts and Practical Exercises</h2></header>
+<p>The main artefact for this unit was Collaborative Discussion 3, which focused on reviewing and refactoring a vulnerable user authentication system. I identified weaknesses in the supplied implementation and mapped them to relevant CWE categories to support the analysis. The refactored version uses bcrypt for password hashing, validates usernames and passwords, rejects duplicate usernames and temporarily locks accounts after repeated failed authentication attempts.</p>
+<p>The exercise also encouraged critical evaluation of the supplied SQL-injection example. Because the original Python code does not construct or execute an SQL query, the input <code>admin' OR '1'='1</code> would not bypass authentication as written. This demonstrated the importance of analysing how a vulnerability actually applies to the code rather than assuming that a malicious-looking input automatically represents a successful attack. If database functionality were introduced later, parameterised queries should be used to reduce SQL-injection risk.</p>
+<p>Download the Full Collaborative Discussion 3 Document: <a style="color:SkyBlue;" href="Collaborative%20Discussion/PDF/Unit%207%20Collaborative%20Discussion%203.pdf">Unit 7 Collaborative Discussion 3.pdf</a></p>
+<div class="table-wrapper"><table><thead><tr><th>Task</th><th>Topic</th><th>Evidence</th></tr></thead><tbody>
+<tr><td>1</td><td>Secure Authentication Refactoring</td><td><a href="Collaborative%20Discussion/code/Authentication_System.html">Open source code</a></td></tr>
+<tr><td>2</td><td>Collaborative Discussion 3</td><td><a href="Collaborative%20Discussion/">Open discussion </a></td></tr>
+</tbody></table></div>
+<header class="major"><h2>Collaborative Discussion - Peer Feedback</h2></header>
+<div class="peer-feedback">
+
+    <p>
+        In response to my initial post, Séba highlighted the value of mapping the identified weaknesses to CWE categories and agreed with the temporary account lockout approach. He also pointed out that my _validate_password() function checks only password length, meaning predictable passwords could still be accepted. He suggested checking for common or known breached passwords and strengthening the lockout behaviour if repeated lockouts occur. I specifically agree with his point that password length alone may still allow predictable passwords. The 12-character minimum is appropriate for this exercise, while a production system could use broader password screening and a more adaptive lockout policy.
+    </p>
+
+    <figure>
+        <img src="images/my%20replay%20to%20S%C3%A9ba%20Daher%20.png"
+             alt="My reply to Séba Daher" />
+    </figure>
+
+    <p>
+        Séba replied to my comment and confirmed that re-registering the same username
+        would replace the existing password hash, causing the old password to stop
+        working and the new one to take over. He described this as a potential
+        account-takeover route and added a simple duplicate-user check to his code.
+        I found this useful because it confirmed that the issue I identified was not
+        only a code-quality concern, but also an application-logic security risk.
+    </p>
+
+    <figure>
+        <img src="images/S%C3%A9ba%20Daher%20replay%20to%20my%20comment%20.png"
+             alt="Séba Daher reply to my comment" />
+    </figure>
+
+    <p>
+        In response to my initial post, Séba highlighted the value of mapping the
+        identified weaknesses to CWE categories and agreed with the temporary account
+        lockout approach. He also pointed out that my <code>_validate_password()</code>
+        function checks only password length, meaning predictable passwords could still
+        be accepted. He suggested checking for common or known breached passwords and
+        strengthening the lockout behaviour if repeated lockouts occur. I agree with
+        this feedback: the 12-character minimum is a useful baseline for this exercise,
+        but a production system would benefit from breached-password screening and a
+        more adaptive lockout policy.
+    </p>
+
+    <figure>
+        <img src="images/S%C3%A9ba%20Daher%20replay%20to%20my%20post.png"
+             alt="Séba Daher reply to my post" />
+    </figure>
+
+</div>
+
+<header class="major"><h2>Unit 7 Reflection</h2></header>
+<p>This unit changed the way I look at authentication code. Before this exercise, I mainly focused on whether authentication worked correctly. The refactoring showed that secure authentication also depends on password storage, input validation, account-registration rules and the way repeated failures are handled.</p>
+<p>The collaborative discussion was also valuable because it demonstrated how peer review can identify weaknesses that are easy to overlook. The duplicate-username issue showed that application logic can create a security risk even without a conventional vulnerability, while the feedback on password quality showed that a secure implementation can still be strengthened further.</p>
+<header class="major"><h2>Professional Skills Development and Action Plan</h2></header>
+<p>The work in this unit improved my ability to connect code-level findings with recognised weakness classifications and practical mitigations. It also strengthened my approach to reviewing authentication logic from both a technical and application logic perspective.</p>
+<p>In future security related development, I intend to apply secure coding principles from the design stage, validate user input, protect stored credentials, control repeated authentication attempts and consider application-logic abuse cases during code review.</p>
+<header class="major"><h2>References</h2></header>
+<ul class="alt">
+<li>MITRE. (2026) <em>CWE - Common Weakness Enumeration.</em> Available at: <a href="https://cwe.mitre.org/">https://cwe.mitre.org/</a>.</li>
+<li>OWASP Foundation. (no date) <em>Secure Coding Practices - Quick Reference Guide.</em> Available at: <a href="https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/stable-en/">OWASP Secure Coding Practices</a>.</li>
+<li>OWASP Foundation. (no date) <em>Authentication Cheat Sheet.</em> Available at: <a href="https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html">OWASP Authentication Cheat Sheet</a>.</li>
+<li>OWASP Foundation. (no date) <em>Password Storage Cheat Sheet.</em> Available at: <a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html">OWASP Password Storage Cheat Sheet</a>.</li>
+</ul>
+</div></section></div>
+<footer id="footer"><div class="inner"><ul class="icons">
+<li><a href="https://github.com/Ralemadi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+</ul><ul class="copyright"><li>&copy; MSc Cyber Security e-Portfolio</li><li>University of Essex</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul></div></footer>
+</div>
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/jquery.scrolly.min.js"></script>
+<script src="../../assets/js/jquery.scrollex.min.js"></script>
+<script src="../../assets/js/browser.min.js"></script>
+<script src="../../assets/js/breakpoints.min.js"></script>
+<script src="../../assets/js/util.js"></script>
+<script src="../../assets/js/main.js"></script>
+</body></html>
