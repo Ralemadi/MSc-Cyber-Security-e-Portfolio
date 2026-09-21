@@ -45,7 +45,8 @@ The implemented design includes:
 
 ## High-Level Architecture Design
 
-The following high-level architecture design illustrates how dependency creation is separated from business logic in the refactored solution. The `UserManager` depends on the `NotificationService` abstraction, while concrete services such as `EmailService` and `SMSService` are created externally and injected as required. During unit testing, a mock based on the `NotificationService` abstraction can be injected instead of a real notification service. This structure demonstrates Dependency Injection and Inversion of Control by reducing coupling and improving testability (Fowler, M. (2004)).
+The following high-level architecture design illustrates how dependency creation is separated from business logic in the refactored solution. The `UserManager` depends on the `NotificationService` abstraction, while concrete services such as `EmailService` and `SMSService` are created externally and injected as required. During unit testing, a mock based on the `NotificationService` abstraction can be injected instead of a real notification service.
+
 
 ![High-Level Architecture Design](images/High-level%20architecture.png)
 
