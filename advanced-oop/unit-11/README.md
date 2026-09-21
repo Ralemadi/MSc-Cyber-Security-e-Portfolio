@@ -29,14 +29,10 @@ Unit testing then demonstrated the testability benefit of DI by injecting a mock
 
 | Artefact | Purpose |
 |---|---|
-| [Unit 11 Portfolio Page](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/unit-11.html) | Main e-Portfolio page for Unit 11 |
-| [Case Study Activity](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/tree/main/advanced-oop/unit-11/Case%20Study%20Activity/) | Original coupling problem, DI refactoring and testing approach |
-| [Refactored Python Code](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/Case%20Study%20Activity/code/dependency_injection.html) | Notification abstraction, Email/SMS services and constructor injection |
-| [Unit Tests](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/Case%20Study%20Activity/tests/test_dependency_injection.html) | Mock-based tests of `UserManager` in isolation |
-| [Test Results](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11//Case%20Study%20Activity/test_results.txt) | Successful execution of the four unit tests |
-| [High-Level Architecture](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/Case%20Study%20Activity/images/High-level%20architecture.png) | Architecture of the refactored DI/IoC design |
-| [Test Results Screenshot](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/Case%20Study%20Activity/images/test_results.png) | Visual evidence of successful test execution |
-
+| [Case Study Activity](Case%20Study%20Activity/) | Original coupling problem, DI refactoring and testing approach |
+| [Refactored Python Code](Case%20Study%20Activity/code/dependency_injection.html) | Notification abstraction, Email/SMS services and constructor injection |
+| [Unit Tests](Case%20Study%20Activity/tests/test_dependency_injection.html) | Mock-based tests of UserManager in isolation |
+| [Test Results](Case%20Study%20Activity/test_results.txt) | Successful execution of the four unit tests |
 
 ## Case Study Activity – Dependency Injection
 
