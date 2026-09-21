@@ -19,7 +19,7 @@ The e-Portfolio will continue to be updated as new modules and units are complet
 
 ## Advanced Object-Oriented Design and Programming
 
-This module explores advanced object-oriented principles, secure software design, SOLID principles, design patterns, concurrency, secure coding, refactoring, software architecture and Test-Driven Development (TDD) through practical programming activities, collaborative discussions, testing evidence and reflective work.
+This module explores advanced object-oriented principles, secure software design, SOLID principles, design patterns, concurrency, secure coding, refactoring, software architecture, Test-Driven Development (TDD), Dependency Injection (DI) and Inversion of Control (IoC) through practical programming activities, collaborative discussions, testing evidence and reflective work.
 
 **[View Module e-Portfolio Overview](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop.html)**  
 **[Browse Module Repository](advanced-oop/)**
@@ -38,6 +38,7 @@ This module explores advanced object-oriented principles, secure software design
 | **Unit 8** | Refactoring and Code Smells | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-8/unit-8.html) | [Browse Files](advanced-oop/unit-8/) |
 | **Unit 9** | Object-Oriented Software Architecture | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-9/unit-9.html) | [Browse Files](advanced-oop/unit-9/) |
 | **Unit 10** | Test-Driven Development (TDD) and Behaviour Driven Development (BDD) | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/unit-10.html) | [Browse Files](advanced-oop/unit-10/) |
+| **Unit 11** | Dependency Injection and Inversion of Control (IoC) | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/unit-11.html) | [Browse Files](advanced-oop/unit-11/) |
 
 ### Module Documentation
 
