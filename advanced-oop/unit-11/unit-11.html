@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Unit 11 | MSc Cyber Security e-Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="MSc Cyber Security e-Portfolio, University of Essex" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <style>
+        #main .inner > p { margin-bottom: 1.15em; }
+        #main .inner > header.major { margin-bottom: 1.1em; }
+        #main .inner > header.major:not(:first-child) { margin-top: 1.8em; }
+        #main .inner > ul { margin-bottom: 1.5em; }
+        #main .inner > .table-wrapper { margin-top: 0.5em; margin-bottom: 1.5em; }
+        code { white-space: normal; }
+        figure { margin: 1.5em 0 2em 0; text-align: center; }
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+        figcaption {
+            margin-top: 0.75em;
+            font-size: 0.9em;
+            opacity: 0.85;
+        }
+        .evidence-image {
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+<div id="wrapper">
+
+<header id="header">
+    <a href="../../index.html" class="logo"><strong>MSc Cyber Security</strong><span>e-Portfolio</span></a>
+    <nav><a href="#menu">Menu</a></nav>
+</header>
+
+<nav id="menu">
+<ul class="links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../advanced-oop.html">Module Overview</a></li>
+    <li><a href="../unit-1/unit-1.html">Unit 1</a></li>
+    <li><a href="../unit-2/unit-2.html">Unit 2</a></li>
+    <li><a href="../unit-3/unit-3.html">Unit 3</a></li>
+    <li><a href="../unit-4/unit-4.html">Unit 4</a></li>
+    <li><a href="../unit-5/unit-5.html">Unit 5</a></li>
+    <li><a href="../unit-6/unit-6.html">Unit 6</a></li>
+    <li><a href="../unit-7/unit-7.html">Unit 7</a></li>
+    <li><a href="../unit-8/unit-8.html">Unit 8</a></li>
+    <li><a href="../unit-9/unit-9.html">Unit 9</a></li>
+    <li><a href="../unit-10/unit-10.html">Unit 10</a></li>
+    <li><a href="../unit-11/unit-11.html">Unit 11</a></li>
+</ul>
+</nav>
+
+<section id="banner" class="style2">
+<div class="inner">
+    <header class="major"><h1>Unit 11: Dependency Injection and Inversion of Control (IoC)</h1></header>
+    <div class="content"><p>Advanced Object-Oriented Design and Programming</p></div>
+</div>
+</section>
+
+<div id="main" class="alt">
+<section id="one">
+<div class="inner">
+
+<header class="major"><h2>Unit Summary</h2></header>
+<p>During this unit, I explored Dependency Injection (DI) and Inversion of Control (IoC) as design principles for reducing coupling between software components. The unit focused on how dependencies can be supplied to objects rather than created internally, making code more flexible, modular and easier to test (Fowler, M. (2004)).</p>
+
+<p>The unit also introduced the role of DI frameworks such as Spring and Google Guice in managing dependencies in larger systems. The practical exercise applies the same principles in Python through a small refactoring activity.</p>
+
+<header class="major"><h2>Learning Outcomes</h2></header>
+<p>By the end of this unit, I was able to:</p>
+<ul>
+    <li>Explain the principles of Dependency Injection and Inversion of Control.</li>
+    <li>Recognise how dependency management can reduce tight coupling between components.</li>
+    <li>Understand how DI frameworks can support flexible, modular and testable software.</li>
+    <li>Apply Dependency Injection in a Python application.</li>
+    <li>Reflect on how DI and IoC can improve maintainability and scalability.</li>
+</ul>
+
+<header class="major"><h2>Artefacts and Practical Exercises</h2></header>
+<p>The main practical activity required refactoring a simple Python application in which <code>UserManager</code> directly created an <code>EmailService</code>. This design created tight coupling because the notification dependency was fixed inside <code>UserManager</code>, and it also reduced testability because testing the manager depended on the real email service (Freeman, S. and Pryce, N. (2010)).</p>
+
+<p>The refactoring introduces a common notification abstraction and changes <code>UserManager</code> so that the required notification service is supplied from outside. This applies Dependency Injection and shifts control over dependency creation away from the class that uses the dependency (Martin, R.C. (2000)).</p>
+
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Artefact</th><th>Purpose</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="Case%20Study%20Activity/README.md">Case Study Activity</a></td><td>Original coupling problem, DI refactoring and testing approach</td></tr>
+<tr><td><a href="Case%20Study%20Activity/code/dependency_injection.html">Refactored Python Code</a></td><td>Notification abstraction, Email/SMS services and constructor injection</td></tr>
+<tr><td><a href="Case%20Study%20Activity/tests/test_dependency_injection.html">Unit Tests</a></td><td>Mock-based tests of UserManager in isolation</td></tr>
+<tr><td><a href="Case%20Study%20Activity/test_results.txt">Test Results</a></td><td>Successful execution of the four unit tests</td></tr>
+</tbody>
+</table>
+</div>
+
+<header class="major"><h2>Case Study Activity – Dependency Injection</h2></header>
+<p>The original implementation creates an <code>EmailService</code> directly inside <code>UserManager</code>. This makes the class depend on one concrete notification mechanism and makes it harder to replace email with another service such as SMS or push notifications (Martin, R.C. (2000)).</p>
+
+<p>The proposed refactoring introduces a <code>NotificationService</code> abstraction, implements that abstraction with <code>EmailService</code>, and modifies <code>UserManager</code> so that the notification dependency is passed into the constructor. This allows the same manager to work with different notification implementations without changing its internal registration logic (Gamma, E. et al. (1995)).</p>
+
+<header class="major"><h2>High-Level Architecture Design</h2></header>
+<p>The following high-level architecture design illustrates how dependency creation is separated from business logic in the refactored solution. The <code>UserManager</code> depends on the <code>NotificationService</code> abstraction, while concrete services such as <code>EmailService</code> and <code>SMSService</code> are created externally and injected as required. During unit testing, a mock based on the <code>NotificationService</code> abstraction can be injected instead of a real notification service. This structure demonstrates Dependency Injection and Inversion of Control by reducing coupling and improving testability (Fowler, M. (2004)).</p>
+
+<figure>
+    <img src="Case Study Activity/images/High-level architecture.png" alt="High-level architecture diagram for the Unit 11 dependency injection design" />
+</figure>
+
+<header class="major"><h2>Testability</h2></header>
+<p>One of the main benefits of the refactoring is improved testability. Instead of using the real email service during a unit test, a mock notification service can be injected into <code>UserManager</code>. The test can then verify that the welcome notification was requested without actually sending an email (Freeman, S. and Pryce, N. (2010)).</p>
+
+<p>This keeps the unit test focused on <code>UserManager</code> and demonstrates how Dependency Injection supports testing components in isolation.</p>
+
+<figure>
+    <img class="evidence-image" src="Case%20Study%20Activity/images/test_results.png" alt="Unit 11 test execution showing four tests passing successfully" />
+    <figcaption><strong>Figure 2.</strong> Unit-test execution showing all four tests passing successfully.</figcaption>
+</figure>
+
+<header class="major"><h2>Further Improvements</h2></header>
+<p>The case study also identifies possible extensions such as adding an <code>SMSService</code>, using a DI container to automate dependency wiring, and testing the real <code>EmailService</code> separately through integration testing (Freeman, S. and Pryce, N. (2010)).</p>
+
+<header class="major"><h2>Reflection</h2></header>
+<p>This unit helped me understand that coupling is not only about whether classes can communicate, but also about who controls the creation of their dependencies. When <code>UserManager</code> creates <code>EmailService</code> internally, changing or testing that dependency becomes more difficult (Fowler, M. (2004)).</p>
+
+<p>Injecting the dependency makes the relationship explicit and allows different notification services to be supplied without changing the main user-management logic. I also recognised the connection between DI and earlier topics such as SOLID principles, software architecture and unit testing, because reducing direct dependencies can improve both extensibility and test isolation (Martin, R.C. (2000)).</p>
+
+<header class="major"><h2>Professional Skills Development and Action Plan</h2></header>
+<p>In future development work, I intend to identify classes that create or tightly control their own external dependencies and consider whether those dependencies should instead be provided through constructor injection or another suitable DI approach. I will also use mocks where appropriate to keep unit tests focused and independent from external services (Freeman, S. and Pryce, N. (2010)).</p>
+
+<header class="major"><h2>References</h2></header>
+<ul class="alt">
+    <li>Fowler, M. (2004) ‘Inversion of Control Containers and the Dependency Injection pattern’. Available at: https://martinfowler.com/articles/injection.html</li>
+    <li>Martin, R.C. (2000) ‘Design Principles and Design Patterns’. Object Mentor.</li>
+    <li>Freeman, S. and Pryce, N. (2010) <em>Growing Object-Oriented Software, Guided by Tests</em>. Addison-Wesley.</li>
+    <li>Gamma, E., Helm, R., Johnson, R. and Vlissides, J. (1995) <em>Design Patterns: Elements of Reusable Object-Oriented Software</em>. Addison-Wesley.</li>
+</ul>
+
+</div>
+</section>
+</div>
+
+<footer id="footer">
+<div class="inner">
+<ul class="icons">
+    <li><a href="https://github.com/Ralemadi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+    <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+</ul>
+<ul class="copyright">
+    <li>&copy; MSc Cyber Security e-Portfolio</li>
+    <li>University of Essex</li>
+    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+</ul>
+</div>
+</footer>
+
+</div>
+
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/jquery.scrolly.min.js"></script>
+<script src="../../assets/js/jquery.scrollex.min.js"></script>
+<script src="../../assets/js/browser.min.js"></script>
+<script src="../../assets/js/breakpoints.min.js"></script>
+<script src="../../assets/js/util.js"></script>
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>

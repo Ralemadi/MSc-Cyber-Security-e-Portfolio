@@ -1,0 +1,11 @@
+PS C:\code\tests> python.exe .\test_dependency_injection.py 
+test_register_user_rejects_empty_user (__main__.TestUserManager.test_register_user_rejects_empty_user) ... ok
+test_register_user_rejects_non_string_user (__main__.TestUserManager.test_register_user_rejects_non_string_user) ... ok
+test_register_user_sends_welcome_notification (__main__.TestUserManager.test_register_user_sends_welcome_notification) ... ok
+test_register_user_strips_whitespace_before_notification (__main__.TestUserManager.test_register_user_strips_whitespace_before_notification) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK
+PS C:\code\tests> 
