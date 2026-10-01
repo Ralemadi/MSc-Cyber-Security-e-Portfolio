@@ -6,6 +6,15 @@ The ShopEase case study required the design of a layered object-oriented archite
 
 The system was divided into separate User Management, Product Catalogue and Order Processing modules. This modular structure separates major responsibilities and supports maintainability and extensibility by reducing direct dependencies between different parts of the system.
 
+
+## High-Level ShopEase Architecture
+
+![High-Level ShopEase Architecture](images/ShopEase_High_Level_Architecture.png)
+
+*Figure 1. High-level layered architecture of the ShopEase case study, showing the Presentation, Business Logic and Data Access layers, together with Dependency Injection and the supporting Strategy and Observer patterns.*
+
+The diagram summarises how `ShopEaseApp` coordinates the business services, while `DataRepository` is injected into `UserService`, `ProductCatalogService` and `OrderService`. `OrderService` also uses the Strategy and Observer patterns for payment behaviour and notifications.
+
 ---
 
 ### `ShopEase_Architecture.py`
