@@ -2,7 +2,7 @@
 
 ## Applying SOLID Principles to a Python Shopping System
 
-The Unit 2 programming exercise applies the **SOLID principles** to a Python shopping system.
+The Unit 2 programming exercise demonstrates how refactoring with **SOLID principles** can move a program from a working but tightly coupled design to a more modular structure.
 
 The exercise is divided into two stages:
 
@@ -166,8 +166,3 @@ Processing crypto payment of $36.90...
 
 ---
 
-## Summary
-
-The exercise demonstrates how refactoring with SOLID principles can move a program from a working but tightly coupled design to a more modular structure.
-
-The initial program produces the correct result, but adding new behaviour requires modifying existing code. The refactored version separates order management, discount calculation and payment processing, allowing the system to be extended with fewer changes to established components.
