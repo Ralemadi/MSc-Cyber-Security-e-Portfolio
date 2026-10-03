@@ -107,23 +107,23 @@ Overall, the module strengthened my ability to justify design choices based on t
 
 # Skills Development
 
-The module has supported the development of both academic and employability skills alongside the technical learning.
+The module supported the development of both academic and employability skills alongside the technical learning.
 
 ### Academic Skills
 
-- **Critical thinking and analysis:** Comparing alternative refactoring and architectural approaches, evaluating when abstraction provides genuine value, and critically reviewing whether a stated vulnerability actually applies to the supplied code.
-- **Problem-solving:** Refactoring insecure or tightly coupled code, protecting shared state in concurrent software, preventing deadlock, improving maintainability, applying Dependency Injection and designing testable object-oriented services.
-- **Research and self-study:** Using academic and professional sources such as MITRE CWE, OWASP, software architecture literature and refactoring guidance to support technical decisions and reflections.
-- **Testing and validation:** Designing repeatable concurrency tests, applying unit testing to public methods and failure conditions, using the Red–Green–Refactor cycle, and using mocks to isolate components from external dependencies.
-- **Secure design awareness:** Considering credential protection, authentication controls, validation, application-logic abuse cases, architectural boundaries and regression risk as part of software design.
+- **Critical thinking and problem-solving:** I moved from asking whether code simply works to evaluating whether a solution is maintainable, testable, secure and proportionate. Practical work with design patterns, concurrency and BankSecure strengthened my ability to compare alternatives and justify design decisions.
+- **Research and independent learning:** When concepts were unclear, I learned to break them into smaller questions, consult academic sources and technical documentation, test examples and then apply the learning to the wider project.
+- **Testing and engineering judgement:** My approach to testing developed from checking successful output to using tests as evidence of behaviour. TDD, mocking, integration, concurrency, stress and scalability testing helped me understand the strengths and limitations of different validation approaches.
+- **Secure design awareness:** Authentication, password protection, validation, RBAC, resource-level authorisation and failure-path testing strengthened my understanding of security as part of software design rather than a final check.
+- **Ethical and AI-aware design:** I developed greater awareness of transparency, explainability, testability, auditability and the risks of black-box coupling when designing software that may integrate AI components.
 
 ### Employability Skills
 
-- **Communication:** Explaining technical design decisions through e-Portfolio writing, architecture descriptions and collaborative discussions.
-- **Collaboration:** Engaging with peer feedback and using alternative perspectives to refine decisions about secure coding and refactoring.
-- **Independent working:** Completing practical implementations, research, testing and supporting evidence independently.
-- **Resilience and adaptability:** Revising implementations and explanations as my understanding of the design problem developed.
-- **System-level thinking:** Moving from individual classes and methods toward concurrency, modular architecture, explicit dependency management, inversion of control and testable system design.
+- **Communication:** Collaborative discussions, peer feedback and technical documentation improved my ability to explain design decisions, evidence and trade-offs clearly.
+- **Independent working:** The practical exercises and Capstone required me to plan, implement, test, document and review work independently across multiple technical areas.
+- **Resilience and adaptability:** Repeated testing, debugging and refinement helped me work through concurrency, security, integration and design challenges rather than treating the first working solution as final.
+- **Time management:** I learned to divide practical work, testing, documentation and evidence preparation into manageable stages while progressing through the module and Capstone.
+- **System-level thinking:** The module developed my ability to move beyond individual classes and methods towards architecture, dependency management, concurrency, persistence, security boundaries and integrated testing.
 
 ---
 
