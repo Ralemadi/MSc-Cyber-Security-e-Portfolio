@@ -144,32 +144,18 @@ The Professional Development Plan summarises my current strengths and developmen
 
 # References
 
-**Bass, L., Clements, P. and Kazman, R. (2021).** *Software Architecture in Practice*. 4th edn. Boston, MA: Addison-Wesley Professional.  
+BCS. (no date-a) *BCS Foundation Certificate in Artificial Intelligence*. Available at: https://www.bcs.org/qualifications-and-certifications/certifications-for-professionals/artificial-intelligence-ai-certifications/bcs-foundation-certificate-in-artificial-intelligence/ (Accessed: 3 October 2026).
 
-**Beck, K. (2002).** *Test Driven Development: By Example*. Boston, MA: Addison-Wesley.  
+BCS. (no date-b) *BCS Foundation Certificate in the Ethical Build of AI*. Available at: https://www.bcs.org/qualifications-and-certifications/online-it-professional-development-courses/bcs-foundation-certificate-in-the-ethical-build-of-ai (Accessed: 3 October 2026).
 
-**Coffman, E.G., Elphick, M.J. and Shoshani, A. (1971).** ‘System Deadlocks’, *ACM Computing Surveys*, 3(2), pp. 67–78.  
+BCS. (no date-c) *CITP Standard*. Available at: https://www.bcs.org/membership-and-registrations/get-registered/chartered-it-professional/citp-standard/ (Accessed: 3 October 2026).
 
-**Fowler, M. (2004).** ‘Inversion of Control Containers and the Dependency Injection pattern’. Available at: https://martinfowler.com/articles/injection.html  
+BCS. (no date-d) *Software testing certification*. Available at: https://www.bcs.org/qualifications-and-certifications/certifications-for-professionals/software-testing-certifications/ (Accessed: 3 October 2026).
 
-**Fowler, M. (2018).** *Refactoring: Improving the Design of Existing Code*. 2nd edn. Boston, MA: Addison-Wesley Professional.  
+Feast. (no date) *Overview*. Available at: https://docs.feast.dev/getting-started/architecture/overview (Accessed: 3 October 2026).
 
-**Freeman, S. and Pryce, N. (2009).** *Growing Object-Oriented Software, Guided by Tests*. Boston, MA: Addison-Wesley.  
+IEEE Computer Society (2024) *Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), Version 4.0*. Available at: https://www.computer.org/education/bodies-of-knowledge/software-engineering (Accessed: 3 October 2026).
 
-**Gamma, E., Helm, R., Johnson, R. and Vlissides, J. (1994).** *Design Patterns: Elements of Reusable Object-Oriented Software*. Addison-Wesley.  
+MLflow (no date) *MLflow Model Registry*. Available at: https://www.mlflow.org/docs/latest/registry/ (Accessed: 3 October 2026).
 
-**Hunt, J. (2019).** *Advanced Guide to Python 3 Programming*. Cham: Springer.  
-
-**Martin, R.C. (2000).** ‘Design Principles and Design Patterns’. Object Mentor.  
-
-**Martin, R.C. (2017).** *Clean Architecture: A Craftsman's Guide to Software Structure and Design*. Prentice Hall.  
-
-**Meszaros, G. (2007).** *xUnit Test Patterns: Refactoring Test Code*. Boston, MA: Addison-Wesley.  
-
-**MITRE (2026).** *CWE – Common Weakness Enumeration*. Available at: https://cwe.mitre.org/  
-
-**OWASP Foundation (n.d.).** *Authentication Cheat Sheet*. Available at: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html  
-
-**OWASP Foundation (n.d.).** *Password Storage Cheat Sheet*. Available at: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html  
-
-**Refactoring.Guru (n.d.).** *Strategy*. Available at: https://refactoring.guru/design-patterns/strategy
+Tabassi, E. (2023) *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1. Gaithersburg, MD: National Institute of Standards and Technology. doi:10.6028/NIST.AI.100-1.
