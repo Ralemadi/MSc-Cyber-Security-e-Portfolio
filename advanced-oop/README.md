@@ -65,7 +65,7 @@ The module learning outcomes were developed progressively across Units 1–11 an
 | **Apply advanced object-oriented principles to solve complex software problems** | Units 1 and 2 establish OOP and SOLID foundations. Unit 6 applies encapsulation and thread-safe object design, Units 9 and 10 apply modular services, layered architecture and testable object-oriented components, and Unit 11 applies Dependency Injection and Inversion of Control to reduce coupling between components. | BankSecure brings these principles together through domain models, service abstractions, Repository interfaces, Dependency Injection, an explicit Composition Root and thread-safe transfer processing. |
 | **Utilise design patterns to create reusable, maintainable and flexible code** | Unit 3 applies Factory Method, Unit 4 applies structural patterns, Unit 5 applies Strategy, Unit 8 compares named constants with Strategy, and Unit 9 applies Strategy and Observer within the ShopEase architecture. | BankSecure applies Strategy, Abstract Factory, Decorator and Visitor, with each pattern used to address a specific design problem rather than simply increasing pattern use. |
 | **Design software architectures suitable for large-scale systems, ensuring security and robustness** | Unit 9 designs a layered ShopEase architecture using Dependency Injection, Strategy and Observer patterns with security controls. Unit 10 applies layered architecture to an e-learning platform and links modularity, security, scalability and testability. Unit 11 further demonstrates loose coupling, constructor injection, abstraction based design and isolated unit testing. Unit 6 also demonstrates robustness through thread-safe shared state management and deadlock prevention. | BankSecure applies layered services, SQLite persistence, explicit transaction handling, rollback, deterministic account-lock ordering, RBAC and automated integration, concurrency, stress and scalability testing. |
-| **Develop software solutions that are adaptable for AI models and efficient for data science tasks** | Units 9 and 11 establish relevant architectural foundations through modular services, abstractions, Dependency Injection and replaceable dependencies. The module also introduced conceptual awareness of AI-oriented architectural patterns including Model Registry for model lifecycle and version management, and Feature Store for reusable and consistent feature management. | BankSecure introduces AI-ready fraud and risk-service abstractions, replaceable provider families and deterministic simulated AI behaviour, allowing AI-dependent components to be tested without requiring a live model or external API. |
+| **Develop software solutions that are adaptable for AI models and efficient for data science tasks** | Units 9 and 11 establish relevant architectural foundations through modular services, abstractions, Dependency Injection and replaceable dependencies. The module also introduced conceptual awareness of AI-oriented architectural patterns including Model Registry for model lifecycle and version management (MLflow, no date), and Feature Store for reusable and consistent feature management (Feast, no date). | BankSecure introduces AI-ready fraud and risk-service abstractions, replaceable provider families and deterministic simulated AI behaviour, allowing AI-dependent components to be tested without requiring a live model or external API. |
 
 ---
 # Module Practical Artefacts and Supporting Evidence
@@ -138,26 +138,8 @@ The Professional Development Plan summarises my current strengths and developmen
 | **Software Architecture** | Partially Met | **Gap:** My experience is mainly with modular and layered applications rather than larger distributed architectures. Gain experience through an applied project and further architecture study. | 6 months | IEEE CS SWEBOK V4 |
 | **Advanced Testing** | Partially Met | **Gap:** I developed experience with TDD, mocking, integration, concurrency, stress and scalability testing, but need broader experience with performance, failure-injection and AI-related testing. Review an appropriate ISTQB testing pathway. | 3–6 months | IEEE CS SWEBOK V4 / BCS-ISTQB |
 | **AI-Aware Software Architecture** | Partially Met | **Gap:** BankSecure introduced replaceable AI-ready service abstractions, while Model Registry and model lifecycle concepts were explored at a conceptual level. Develop a project that applies these concepts more fully and consider the BCS Foundation Certificate in AI. | 6 months | BCS AI |
-| **Ethical AI and Explainability** | Partially Met | **Gap:** I developed awareness of bias, explainability, auditability and black-box coupling, but need deeper practical experience applying these principles. Continue study in ethical AI and consider the BCS Ethical Build of AI certification. | 6–12 months | BCS AI / NIST AI RMF |
+| **Ethical AI and Explainability** | Partially Met | **Gap:** I developed awareness of bias, explainability, auditability and black-box coupling in AI-enabled systems, areas also addressed within AI risk-management guidance (Tabassi, 2023) | 6–12 months | BCS AI / NIST AI RMF |
 | **Technical Communication** | Met | **Strength:** Collaborative discussions, technical documentation and evidence presentation improved my ability to explain design decisions clearly. Continue improving concise technical documentation and evidence presentation. | Ongoing | BCS CITP |
----
-
-# Practical Work Summary
-
-| Unit | Main Topic | Main Practical Work |
-|---|---|---|
-| **Unit 1** | OOP Fundamentals | Inheritance, polymorphism, encapsulation, abstraction, constructors/destructors |
-| **Unit 2** | SOLID Principles | Refactoring an online shopping system |
-| **Unit 3** | Creational Patterns | Factory Method car manufacturing system |
-| **Unit 4** | Structural Patterns | Adapter, Bridge, Composite and Decorator examples |
-| **Unit 5** | Behavioural Patterns | Strategy Pattern payment processor |
-| **Unit 6** | Concurrency and Parallelism | Thread-safe banking system, concurrent transaction simulation, locking and deadlock prevention |
-| **Unit 7** | Secure Coding Practices | Secure authentication refactoring, bcrypt password protection, input validation, account lockout and CWE analysis |
-| **Unit 8** | Refactoring and Code Smells | Magic-number and conditional-logic analysis, named constants and Strategy Pattern comparison |
-| **Unit 9** | Software Architecture | ShopEase layered architecture, Dependency Injection, Strategy/Observer patterns and secure user handling |
-| **Unit 10** | TDD and Unit Testing | E-learning User Management service, layered architecture, nine unit tests and Red–Green–Refactor evidence |
-| **Unit 11** | Dependency Injection and IoC | Refactored notification system using `NotificationService`, constructor injection, Email/SMS implementations and four mock-based unit tests |
-
 ---
 
 # References
