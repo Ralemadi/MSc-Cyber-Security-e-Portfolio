@@ -129,22 +129,17 @@ The module supported the development of both academic and employability skills a
 
 # Professional Development Plan
 
-The Professional Development Plan will continue to develop as I apply the module concepts to larger and more complex software.
+The Professional Development Plan summarises my current strengths and development priorities, together with practical actions, target timeframes and relevant professional benchmarks.
 
-| Area | Current Position | Development Action |
-|---|---|---|
-| **Strength – Object-Oriented Design** | I can apply OOP, SOLID principles and design patterns to practical problems and increasingly relate class-level design to system-level architecture. | Continue applying these principles to larger applications where several modules, services and dependencies interact. |
-| **Strength – Security Perspective** | Unit 7 and Unit 10 strengthened my ability to integrate password protection, validation, authentication controls and security-focused testing into application design. | Continue applying secure coding principles from the design stage and review application-logic abuse cases as well as conventional vulnerabilities. |
-| **Strength – Concurrency and Robustness** | Unit 6 developed my understanding of shared state, critical sections, race conditions, locking and deadlock prevention. | Apply thread-safety considerations to future tools that use workers, shared queues, caches or other shared resources. |
-| **Developing – Pattern and Refactoring Selection** | Unit 8 improved my ability to decide between a simple refactoring and a more structured design pattern based on expected change and present design value. | Continue comparing alternatives and document why additional abstraction is justified before introducing it. |
-| **Developing – Software Architecture** | Unit 9 and Unit 10 provided practical experience with layered architecture, modular services, Dependency Injection and architecture-quality considerations. | Experiment with larger and hybrid architectures and evaluate their scalability, maintainability, security and integration trade-offs. |
-| **Developing – Dependency Management** | Unit 11 provided practical experience with constructor injection, abstractions, alternative implementations and mock-based isolation. | Apply DI in larger systems and explore when a DI container is justified compared with explicit composition. |
-| **Developing – Testing Practice** | Unit 6 introduced repeatable concurrency testing, Unit 10 applied TDD with nine unit tests and the Red–Green–Refactor cycle, and Unit 11 used mock-based testing to isolate `UserManager` from real notification services. | Extend this experience with more dependency isolation, integration testing and broader regression testing while retaining engineering judgement. |
-| **Future Goal – AI-Aware Architecture** | AI-oriented OO architecture has not yet been explored in depth in the completed evidence. | Develop understanding of abstraction around AI services, model/API replacement, testability and maintainable integration of AI components. |
-| **Future Goal – Ethical Software Engineering** | Security and robustness have been considered throughout the module, while AI-specific ethical considerations remain future work. | Consider explainability, auditability, bias propagation, testability and avoidance of unnecessary black-box coupling in future AI-related work. |
-
-The final Professional Development Plan will link these actions to further reading, applied projects and relevant professional development opportunities.
-
+| **Skill Set** | **Current Status** | **Strength / Gap / Action Plan** | **Target Time** | **Professional Benchmark / Reference** |
+|---|---|---|---|---|
+| **Object-Oriented Design and Python** | Met | **Strength:** I can apply OOP, SOLID principles and design patterns to practical problems. Continue applying advanced OOP in larger projects and evaluating when additional abstraction is justified. | Ongoing | BCS CITP |
+| **Secure Software Engineering** | Met | **Strength:** The module strengthened my ability to integrate secure coding, authentication controls, access control and security-focused testing into application design. Maintain these skills through secure coding and security-focused projects. | Ongoing | IEEE CS SWEBOK V4 / BCS CITP |
+| **Software Architecture** | Partially Met | **Gap:** My experience is mainly with modular and layered applications rather than larger distributed architectures. Gain experience through an applied project and further architecture study. | 6 months | IEEE CS SWEBOK V4 |
+| **Advanced Testing** | Partially Met | **Gap:** I developed experience with TDD, mocking, integration, concurrency, stress and scalability testing, but need broader experience with performance, failure-injection and AI-related testing. Review an appropriate ISTQB testing pathway. | 3–6 months | IEEE CS SWEBOK V4 / BCS-ISTQB |
+| **AI-Aware Software Architecture** | Partially Met | **Gap:** BankSecure introduced replaceable AI-ready service abstractions, while Model Registry and model lifecycle concepts were explored at a conceptual level. Develop a project that applies these concepts more fully and consider the BCS Foundation Certificate in AI. | 6 months | BCS AI |
+| **Ethical AI and Explainability** | Partially Met | **Gap:** I developed awareness of bias, explainability, auditability and black-box coupling, but need deeper practical experience applying these principles. Continue study in ethical AI and consider the BCS Ethical Build of AI certification. | 6–12 months | BCS AI / NIST AI RMF |
+| **Technical Communication** | Met | **Strength:** Collaborative discussions, technical documentation and evidence presentation improved my ability to explain design decisions clearly. Continue improving concise technical documentation and evidence presentation. | Ongoing | BCS CITP |
 ---
 
 # Practical Work Summary
