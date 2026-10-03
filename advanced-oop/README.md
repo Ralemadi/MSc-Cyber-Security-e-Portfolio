@@ -7,6 +7,8 @@
 
 This repository documents my work across the **Advanced Object-Oriented Design and Programming** module. The module progresses from the foundations of Object-Oriented Programming (OOP) into software design principles, design patterns, concurrency, secure coding, refactoring, software architecture, Test-Driven Development (TDD), Dependency Injection (DI) and Inversion of Control (IoC).
 
+The module concludes with the **BankSecure Capstone Project**, which brings these areas together in a secure object-oriented banking application. The project applies design patterns, concurrency controls, persistent storage, role-based access control, automated testing, Dependency Injection and AI ready service abstractions within one integrated system.
+
 The work currently covers:
 
 - **Unit 1:** Introduction and Recap of Object-Oriented Programming
@@ -29,6 +31,7 @@ Each unit includes an e-Portfolio page together with practical exercises, code, 
 |---|---|
 | **Module e-Portfolio Overview** | [Open e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop.html) |
 | **Module Repository** | [Browse Repository](./) |
+| **Unit 12 – Capstone Project** | [Open Capstone Project](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/tree/main/advanced-oop/unit-12/Capstone%20Project) |
 
 ---
 
