@@ -67,8 +67,24 @@ The module learning outcomes were developed progressively across Units 1–11 an
 | **Design software architectures suitable for large-scale systems, ensuring security and robustness** | Unit 9 designs a layered ShopEase architecture using Dependency Injection, Strategy and Observer patterns with security controls. Unit 10 applies layered architecture to an e-learning platform and links modularity, security, scalability and testability. Unit 11 further demonstrates loose coupling, constructor injection, abstraction based design and isolated unit testing. Unit 6 also demonstrates robustness through thread-safe shared state management and deadlock prevention. | BankSecure applies layered services, SQLite persistence, explicit transaction handling, rollback, deterministic account-lock ordering, RBAC and automated integration, concurrency, stress and scalability testing. |
 | **Develop software solutions that are adaptable for AI models and efficient for data science tasks** | Units 9 and 11 establish relevant architectural foundations through modular services, abstractions, Dependency Injection and replaceable dependencies. The module also introduced conceptual awareness of AI-oriented architectural patterns including Model Registry for model lifecycle and version management, and Feature Store for reusable and consistent feature management. | BankSecure introduces AI-ready fraud and risk-service abstractions, replaceable provider families and deterministic simulated AI behaviour, allowing AI-dependent components to be tested without requiring a live model or external API. |
 
-ب
+---
+# Module Practical Artefacts and Supporting Evidence
 
+The table below summarises representative practical artefacts from Units 1–11 and provides direct access to the supporting README documentation and complete practical evidence.
+
+| **Unit** | **Practical Artefact** | **Supporting Evidence** |
+|---|---|---|
+| **1** | Five OOP exercises | [Exercise README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-1/Programming%20Exercise/README.md) |
+| **2** | SOLID shopping refactoring | [Exercise README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-2/Programming%20Exercises/README.md) |
+| **3** | Factory Method | [Activity README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-3/Practical%20Activity/README.md) |
+| **4** | Structural patterns, including the Coffee Decorator seminar exercise | [Discussion README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-4/Collaborative%20Discussion%20Structural%20Design%20Patterns/README.md) · [Coffee Decorator Seminar Exercise](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-4/Seminar%20Practical%20Activity%20Decorator%20Pattern/README.md) |
+| **5** | Payment Strategy | [Discussion README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-5/Collaborative%20Discussion%20Strategy%20Pattern/README.md) |
+| **6** | Thread-safe banking | [Exercise README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-6/Individual%20Coding%20Exercise/README.md) |
+| **7** | Secure authentication | [Discussion README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-7/Collaborative%20Discussion/README.md) |
+| **8** | Discount refactoring | [Discussion README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-8/Collaborative%20Discussion/README.md) |
+| **9** | ShopEase architecture | [Case Study README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-9/Case%20Study%20Activity/README.md) |
+| **10** | User Management and TDD | [Case Study README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-10/Case%20Study%20Activity/README.md) |
+| **11** | Dependency Injection and mocking | [Case Study README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-11/Case%20Study%20Activity/README.md) |
 ---
 
 # Module Reflection
