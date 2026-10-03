@@ -91,15 +91,15 @@ The table below summarises representative practical artefacts from Units 1–11 
 
 Across the module, my understanding of object-oriented programming developed from focusing mainly on whether code worked to considering whether a solution was maintainable, secure, testable and appropriate for future change.
 
-Concurrency was one of the areas that changed my approach most. The thread-safe banking work showed that software can appear correct during normal execution while still failing under concurrent access. Working with shared state, lock ordering and deadlock prevention strengthened my understanding of robustness beyond simple functional correctness.
+Concurrency was one of the areas that changed my approach most. As Coffman, Elphick and Shoshani (1971) explain through their work on deadlock, concurrent systems require reasoning beyond normal sequential execution. The thread-safe banking work showed me that software can appear correct during normal execution while still failing under concurrent access. Working with shared state, lock ordering and deadlock prevention strengthened my understanding of robustness beyond simple functional correctness.
 
-Secure coding also became more closely connected to software design. Authentication, password protection, validation, access control and failure handling showed me that security should be considered throughout implementation rather than added only at the end. This was later reinforced in BankSecure through RBAC, temporary login lockout, resource-level authorisation and negative-path testing.
+Secure coding also became more closely connected to software design. Guidance from the OWASP Foundation (no date) and Souppaya, Scarfone and Dodson (2022) reinforced the importance of considering security throughout development rather than adding it only at the end. Authentication, password protection, validation, access control and failure handling demonstrated this in practice. BankSecure later extended these ideas through RBAC, temporary login lockout, resource-level authorisation and negative-path testing.
 
-My understanding of design patterns also became more selective. Earlier in the module, patterns mainly appeared to be reusable design solutions. Through the practical work and Capstone, I learned that their value depends on whether they solve a real design problem. Strategy, Abstract Factory, Decorator and Visitor were useful in BankSecure because they supported variation, separation of concerns and testability, while simpler concerns were kept as straightforward services or policies.
+My understanding of design patterns also became more selective. Gamma et al. (1994) present patterns as reusable solutions to recurring design problems, but through the practical work and Capstone I learned that their value depends on whether they solve a genuine problem in the system. Strategy, Abstract Factory, Decorator and Visitor were useful in BankSecure because they supported variation, separation of concerns and testability, while simpler concerns were kept as straightforward services or policies. This also reflects Fowler's (2018) emphasis on improving design without introducing unnecessary complexity.
 
-Testing became part of the design process rather than only a final verification step. TDD, mocking, integration testing, concurrency testing and stress testing helped me evaluate both expected behaviour and failure conditions. Dependency Injection and repository abstractions also showed how reducing coupling can make components easier to replace and test.
+Testing became part of the design process rather than only a final verification step. Beck's (2002) TDD approach helped me understand how tests can guide behaviour during development, while Meszaros (2007) strengthened my understanding of isolation and mocking. In practice, TDD, mocking, integration testing, concurrency testing and stress testing helped me evaluate both expected behaviour and failure conditions. Fowler's (2004) discussion of Dependency Injection also helped me understand how reducing coupling can make components easier to replace and test.
 
-The BankSecure Capstone brought these areas together within one system. It also reinforced the importance of recognising limitations. The project demonstrates AI ready service abstractions and local concurrency behaviour, but it does not claim to implement a production AI model or a distributed production banking architecture. 
+The BankSecure Capstone brought these areas together within one system. It also reinforced the importance of recognising limitations. The project demonstrates AI-ready service abstractions and local concurrency behaviour, but it does not claim to implement a production AI model or a distributed production banking architecture.
 
 Overall, the module strengthened my ability to justify design choices based on the problem being solved and the evidence available from testing and implementation.
 
@@ -144,18 +144,32 @@ The Professional Development Plan summarises my current strengths and developmen
 
 # References
 
-BCS. (no date-a) *BCS Foundation Certificate in Artificial Intelligence*. Available at: https://www.bcs.org/qualifications-and-certifications/certifications-for-professionals/artificial-intelligence-ai-certifications/bcs-foundation-certificate-in-artificial-intelligence/ (Accessed: 3 October 2026).
+Beck, K. (2002) *Test Driven Development: By Example*. Boston, MA: Addison-Wesley.
 
-BCS. (no date-b) *BCS Foundation Certificate in the Ethical Build of AI*. Available at: https://www.bcs.org/qualifications-and-certifications/online-it-professional-development-courses/bcs-foundation-certificate-in-the-ethical-build-of-ai (Accessed: 3 October 2026).
+BCS (no date-a) *Artificial intelligence (AI) certifications*. Available at: https://www.bcs.org/qualifications-and-certifications/certifications-for-professionals/artificial-intelligence-ai-certifications/ (Accessed: 1 October 2026).
 
-BCS. (no date-c) *CITP Standard*. Available at: https://www.bcs.org/membership-and-registrations/get-registered/chartered-it-professional/citp-standard/ (Accessed: 3 October 2026).
+BCS (no date-b) *CITP Standard*. Available at: https://www.bcs.org/membership-and-registrations/get-registered/chartered-it-professional/citp-standard/ (Accessed: 1 October 2026).
 
-BCS. (no date-d) *Software testing certification*. Available at: https://www.bcs.org/qualifications-and-certifications/certifications-for-professionals/software-testing-certifications/ (Accessed: 3 October 2026).
+BCS (no date-c) *Software testing certification*. Available at: https://www.bcs.org/qualifications-and-certifications/certifications-for-professionals/software-testing-certifications/ (Accessed: 1 October 2026).
 
-Feast. (no date) *Overview*. Available at: https://docs.feast.dev/getting-started/architecture/overview (Accessed: 3 October 2026).
+Coffman, E.G., Elphick, M.J. and Shoshani, A. (1971) ‘System deadlocks’, *ACM Computing Surveys*, 3(2), pp. 67–78. doi:10.1145/356586.356588.
 
-IEEE Computer Society (2024) *Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), Version 4.0*. Available at: https://www.computer.org/education/bodies-of-knowledge/software-engineering (Accessed: 3 October 2026).
+Feast (no date) *Feast Python API Documentation*. Available at: https://api.docs.feast.dev/python/ (Accessed: 28 September 2026).
 
-MLflow (no date) *MLflow Model Registry*. Available at: https://www.mlflow.org/docs/latest/registry/ (Accessed: 3 October 2026).
+Fowler, M. (2004) ‘Inversion of Control Containers and the Dependency Injection pattern’. Available at: https://martinfowler.com/articles/injection.html (Accessed: 28 September 2026).
+
+Fowler, M. (2018) *Refactoring: Improving the Design of Existing Code*. 2nd edn. Boston, MA: Addison-Wesley Professional.
+
+Gamma, E. *et al.* (1994) *Design Patterns: Elements of Reusable Object-Oriented Software*. Reading, MA: Addison-Wesley.
+
+IEEE Computer Society (2024) *Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), Version 4.0*. Available at: https://www.computer.org/education/bodies-of-knowledge/software-engineering (Accessed: 1 October 2026).
+
+Meszaros, G. (2007) *xUnit Test Patterns: Refactoring Test Code*. Boston, MA: Addison-Wesley.
+
+MLflow (no date) *ML Model Registry*. Available at: https://www.mlflow.org/docs/latest/registry/ (Accessed: 28 September 2026).
+
+OWASP Foundation (no date) *Authentication Cheat Sheet*. Available at: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html (Accessed: 28 September 2026).
+
+Scarfone, K., Souppaya, M. and Dodson, D. (2022) *Secure Software Development Framework (SSDF) Version 1.1: Recommendations for Mitigating the Risk of Software Vulnerabilities*. NIST Special Publication 800-218. Gaithersburg, MD: National Institute of Standards and Technology. doi:10.6028/NIST.SP.800-218.
 
 Tabassi, E. (2023) *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1. Gaithersburg, MD: National Institute of Standards and Technology. doi:10.6028/NIST.AI.100-1.
