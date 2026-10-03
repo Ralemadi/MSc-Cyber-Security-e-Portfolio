@@ -89,37 +89,19 @@ The table below summarises representative practical artefacts from Units 1–11 
 
 # Module Reflection
 
-Across Units 1–11, my understanding progressed from individual object-oriented concepts to broader decisions involving concurrency, secure implementation, maintainability, software architecture, automated testing and dependency management.
+Across the module, my understanding of object-oriented programming developed from focusing mainly on whether code worked to considering whether a solution was maintainable, secure, testable and appropriate for future change.
 
-**Unit 1** established the foundation by revisiting inheritance, polymorphism, abstraction and encapsulation.  
+Concurrency was one of the areas that changed my approach most. The thread-safe banking work showed that software can appear correct during normal execution while still fail under concurrent access. Working with shared state, lock ordering and deadlock prevention strengthened my understanding of robustness beyond simple functional correctness.
 
-**Unit 2** moved from individual programming concepts to design quality through SOLID principles.  
+Secure coding also became more closely connected to software design. Authentication, password protection, validation, access control and failure handling showed me that security should be considered throughout implementation rather than added only at the end. This was later reinforced in BankSecure through RBAC, temporary login lockout, resource-level authorisation and negative-path testing.
 
-**Unit 3** introduced creational patterns and demonstrated how object creation can be separated from application logic.  
+My understanding of design patterns also became more selective. Earlier in the module, patterns mainly appeared to be reusable design solutions. Through the practical work and Capstone, I learned that their value depends on whether they solve a real design problem. Strategy, Abstract Factory, Decorator and Visitor were useful in BankSecure because they supported variation, separation of concerns and testability, while simpler concerns were kept as straightforward services or policies.
 
-**Unit 4** shifted the focus to structural relationships between objects and classes.  
+Testing became part of the design process rather than only a final verification step. TDD, mocking, integration testing, concurrency testing and stress testing helped me evaluate both expected behaviour and failure conditions. Dependency Injection and repository abstractions also showed how reducing coupling can make components easier to replace and test.
 
-**Unit 5** explored how responsibilities and behaviour can be distributed between interacting objects.
+The BankSecure Capstone brought these areas together within one system. It also reinforced the importance of recognising limitations. The project demonstrates AI ready service abstractions and local concurrency behaviour, but it does not claim to implement a production AI model or a distributed production banking architecture. 
 
-**Unit 6** introduced concurrency and parallelism. Building a thread-safe banking system showed me that software correctness must also hold when multiple execution paths interact with shared state. The work with locking, consistent lock ordering and repeatable concurrency tests strengthened my understanding of race-condition and deadlock prevention.
-
-**Unit 7** moved the focus directly into secure coding. Refactoring the authentication system helped me connect password storage, input validation, repeated authentication attempts and application-logic issues with recognised CWE and OWASP guidance. The collaborative discussion also reinforced the value of peer review when evaluating security-sensitive code.
-
-**Unit 8** developed my understanding of code smells and proportionate refactoring. Comparing named constants with the Strategy Pattern showed that a design pattern should be introduced because it solves a real maintenance problem, not simply because it is available. The peer discussion also helped me evaluate abstraction based on present value and expected change.
-
-**Unit 9** shifted my thinking from individual classes to system-level architecture. The ShopEase case study used layered architecture, Dependency Injection, Strategy and Observer patterns to separate responsibilities while considering maintainability, scalability, security and extensibility.
-
-**Unit 10** connected software design with testing through the Red–Green–Refactor cycle. Implementing and testing a secure User Management service showed how unit tests can define expected behaviour, validate failure conditions and provide a safety net when internal code is refactored.
-
-**Unit 11** developed my understanding of Dependency Injection and Inversion of Control. Refactoring `UserManager` so that notification services are supplied from outside the class showed how constructor injection can reduce coupling and make dependencies explicit. Using a `NotificationService` abstraction, alternative implementations and mock-based unit tests also demonstrated how DI improves extensibility and test isolation.
-
-A recurring theme across the module has been the importance of designing software that is not only functional but also **maintainable, extensible, secure, testable and understandable**.
-
-The practical exercises also helped me relate object-oriented design to cybersecurity. Thread-safe shared state, secure authentication, input validation, password protection, controlled application logic, secure architectural boundaries and security-focused tests all demonstrated how software-design decisions can directly affect system security and robustness.
-
-Another important lesson has been that abstraction, SOLID principles, design patterns, architectural layers and testing techniques should be applied proportionately. Additional classes, interfaces or architectural components create value when they solve a clear design problem, reduce coupling, support expected change or improve testability.
-
-Going forward, I intend to continue applying these principles when developing security tools, automation scripts, monitoring components and larger software systems where maintainability, secure behaviour and controlled change are important.
+Overall, the module strengthened my ability to justify design choices based on the problem being solved and the evidence available from testing and implementation.
 
 ---
 
