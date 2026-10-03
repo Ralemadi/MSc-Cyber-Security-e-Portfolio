@@ -91,7 +91,7 @@ The table below summarises representative practical artefacts from Units 1–11 
 
 Across the module, my understanding of object-oriented programming developed from focusing mainly on whether code worked to considering whether a solution was maintainable, secure, testable and appropriate for future change.
 
-Concurrency was one of the areas that changed my approach most. The thread-safe banking work showed that software can appear correct during normal execution while still fail under concurrent access. Working with shared state, lock ordering and deadlock prevention strengthened my understanding of robustness beyond simple functional correctness.
+Concurrency was one of the areas that changed my approach most. The thread-safe banking work showed that software can appear correct during normal execution while still failing under concurrent access. Working with shared state, lock ordering and deadlock prevention strengthened my understanding of robustness beyond simple functional correctness.
 
 Secure coding also became more closely connected to software design. Authentication, password protection, validation, access control and failure handling showed me that security should be considered throughout implementation rather than added only at the end. This was later reinforced in BankSecure through RBAC, temporary login lockout, resource-level authorisation and negative-path testing.
 
@@ -138,7 +138,7 @@ The Professional Development Plan summarises my current strengths and developmen
 | **Software Architecture** | Partially Met | **Gap:** My experience is mainly with modular and layered applications rather than larger distributed architectures. Gain experience through an applied project and further architecture study. | 6 months | IEEE CS SWEBOK V4 |
 | **Advanced Testing** | Partially Met | **Gap:** I developed experience with TDD, mocking, integration, concurrency, stress and scalability testing, but need broader experience with performance, failure-injection and AI-related testing. Review an appropriate ISTQB testing pathway. | 3–6 months | IEEE CS SWEBOK V4 / BCS-ISTQB |
 | **AI-Aware Software Architecture** | Partially Met | **Gap:** BankSecure introduced replaceable AI-ready service abstractions, while Model Registry and model lifecycle concepts were explored at a conceptual level. Develop a project that applies these concepts more fully and consider the BCS Foundation Certificate in AI. | 6 months | BCS AI |
-| **Ethical AI and Explainability** | Partially Met | **Gap:** I developed awareness of bias, explainability, auditability and black-box coupling in AI-enabled systems, areas also addressed within AI risk-management guidance (Tabassi, 2023) | 6–12 months | BCS AI / NIST AI RMF |
+| **Ethical AI and Explainability** | Partially Met | **Gap:** I developed awareness of bias, explainability, auditability and black-box coupling in AI-enabled systems, areas also addressed within AI risk-management guidance (Tabassi, 2023). **Action:** Further study bias, explainability and auditability and consider the BCS Ethical Build of AI certification. | 6–12 months | BCS AI / NIST AI RMF |
 | **Technical Communication** | Met | **Strength:** Collaborative discussions, technical documentation and evidence presentation improved my ability to explain design decisions clearly. Continue improving concise technical documentation and evidence presentation. | Ongoing | BCS CITP |
 ---
 
