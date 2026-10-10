@@ -1,0 +1,3 @@
+
+class ReturnToMainMenu(Exception):
+    pass
