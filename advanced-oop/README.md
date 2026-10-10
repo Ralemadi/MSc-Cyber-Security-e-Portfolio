@@ -52,6 +52,7 @@ The table below provides direct access to each unit's e-Portfolio page and repos
 | **Unit 9** | Object-Oriented Software Architecture | [View e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-9/unit-9.html) | [Browse Unit 9](unit-9/) |
 | **Unit 10** | Test-Driven Development (TDD) and Behaviour Driven Development (BDD) | [View e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/unit-10.html) | [Browse Unit 10](unit-10/) |
 | **Unit 11** | Dependency Injection and Inversion of Control (IoC) | [View e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/unit-11.html) | [Browse Unit 11](unit-11/) |
+| **Unit 12** | Recent Developments and Review | [View e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-12/unit-12.html) | [Browse Unit 12](unit-12/) |
 
 ---
 
