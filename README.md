@@ -39,6 +39,7 @@ This module explores advanced object-oriented principles, secure software design
 | **Unit 9** | Object-Oriented Software Architecture | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-9/unit-9.html) | [Browse Files](advanced-oop/unit-9/) |
 | **Unit 10** | Test-Driven Development (TDD) and Behaviour Driven Development (BDD) | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-10/unit-10.html) | [Browse Files](advanced-oop/unit-10/) |
 | **Unit 11** | Dependency Injection and Inversion of Control (IoC) | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/unit-11.html) | [Browse Files](advanced-oop/unit-11/) |
+| **Unit 12** | Recent Developments and Review | [View Unit](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-12/unit-12.html) | [Browse Files](advanced-oop/unit-12/) |
 
 ### Module Documentation
 
