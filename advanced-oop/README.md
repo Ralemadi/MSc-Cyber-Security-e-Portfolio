@@ -29,8 +29,9 @@ Each unit includes an e-Portfolio page together with practical exercises, code, 
 
 | Resource | Link |
 |---|---|
-| **Module e-Portfolio Overview** | [Open e-Portfolio](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop.html) |
+| **Module e-Portfolio Overview** | [Open e-Portfolio - Module](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop.html) |
 | **Module Repository** | [Browse Repository](./) |
+| **Unit 12 Overview** | [Open e-Portfolio - Unit 12](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-12/unit-12.html) |
 | **Unit 12 – Capstone Project** | [Open Capstone Project](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/tree/main/advanced-oop/unit-12/Capstone%20Project) |
 
 ---
