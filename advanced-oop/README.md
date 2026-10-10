@@ -86,6 +86,7 @@ The table below summarises representative practical artefacts from Units 1–11 
 | **9** | ShopEase architecture | [Case Study README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-9/Case%20Study%20Activity/README.md) |
 | **10** | User Management and TDD | [Case Study README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-10/Case%20Study%20Activity/README.md) |
 | **11** | Dependency Injection and mocking | [Case Study README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/blob/main/advanced-oop/unit-11/Case%20Study%20Activity/README.md) |
+| **12** | Capstone Project | [Capstone Project README](https://github.com/Ralemadi/MSc-Cyber-Security-e-Portfolio/tree/main/advanced-oop/unit-12/Capstone%20Project) |
 ---
 
 # Module Reflection
