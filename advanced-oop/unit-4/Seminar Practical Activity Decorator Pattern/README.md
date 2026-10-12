@@ -45,8 +45,8 @@ The output demonstrates the accumulated description and cost as decorators are a
 
 ## Source Code and Full Document
 
-**[Open decorator.html](code/decorator.html)**  
-**[Open Seminar Practical Activity Decorator Pattern.pdf](Seminar%20Practical%20Activity%20Decorator%20Pattern.pdf)**
+**[Open decorator.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/code/decorator.html)**  
+**[Open Seminar Practical Activity Decorator Pattern.pdf](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/Seminar%20Practical%20Activity%20Decorator%20Pattern/Seminar%20Practical%20Activity%20Decorator%20Pattern.pdf)**
 
 ## Summary
 
