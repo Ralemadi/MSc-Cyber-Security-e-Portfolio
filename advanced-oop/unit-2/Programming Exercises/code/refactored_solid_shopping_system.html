@@ -1,0 +1,126 @@
+<!--
+Source - https://stackoverflow.com/a/62032824
+Posted by kiwirafe, modified by community. See post 'Timeline' for change history
+Retrieved 2026-08-08, License - CC BY-SA 4.0
+-->
+
+<head>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <pre><code class="python">from abc import ABC, abstractmethod
+from dataclasses import dataclass
+
+@dataclass
+class Product:
+    name: str
+    price: float
+
+
+
+class Order: 
+
+    """SRP: manages products and calculates the order total only."""
+
+    def __init__(self):
+        self.items = []
+
+    def add_item(self, product: Product) -> None:
+        self.items.append(product)
+
+
+    def calculate_total(self) -> float:
+        return sum(product.price for product in self.items)
+
+
+
+
+class Discount(ABC):
+    """Small focused abstraction for discount calculation."""
+
+    @abstractmethod
+    def apply(self, total: float) -> float:
+        raise NotImplementedError
+
+class NoDiscount(Discount):
+    def apply(self, total: float) -> float:
+        return total
+
+class PercentageDiscount(Discount):
+    def __init__(self, percentage: float):
+        if not 0 <= percentage <= 100:
+            raise ValueError("Percentage must be between 0 and 100.")
+        self.percentage = percentage
+
+    def apply(self, total: float) -> float:
+        return total * (1 - self.percentage / 100)
+
+class PaymentMethod(ABC):
+    """Abstraction used by checkout service."""
+
+    @abstractmethod
+    def pay(self, amount: float) -> None:
+        raise NotImplementedError
+
+class CreditCardPayment(PaymentMethod):
+    def pay(self, amount: float) -> None:
+        print(f"Processing credit card payment of ${amount:.2f}...")
+
+class PayPalPayment(PaymentMethod):
+    def pay(self, amount: float) -> None:
+        print(f"Processing PayPal payment of ${amount:.2f}...")
+
+class CryptoPayment(PaymentMethod):
+    def pay(self, amount: float) -> None:
+        print(f"Processing crypto payment of ${amount:.2f}...")
+
+class CheckoutService:
+    """
+    DIP: depends on PaymentMethod and Discount abstractions,
+    not on concrete payment or discount classes.
+    """
+
+    def __init__(self, payment_method: PaymentMethod, discount: Discount):
+        self.payment_method = payment_method
+        self.discount = discount
+
+    def checkout(self, order: Order) -> float:
+        subtotal = order.calculate_total()
+        final_total = self.discount.apply(subtotal)
+
+        print(f"Subtotal: ${subtotal:.2f}")
+        print(f"Final total: ${final_total:.2f}")
+        self.payment_method.pay(final_total)
+
+        return final_total
+
+
+if __name__ == "__main__":
+    order = Order()
+    order.add_item(Product("Keyboard", 25.00))
+    order.add_item(Product("Mouse", 16.00))
+
+    discount = PercentageDiscount(10)  #Discount 10%
+
+
+
+    print("Credit Card Checkout")
+    credit_checkout = CheckoutService(CreditCardPayment(), discount)
+    credit_checkout.checkout(order)
+    print("----------------------------------------------------")
+    
+    print("\nPayPal Checkout")
+    paypal_checkout = CheckoutService(PayPalPayment(), discount)
+    paypal_checkout.checkout(order)
+    print("----------------------------------------------------")
+
+    print("\nCrypto Checkout")
+    crypto_checkout = CheckoutService(CryptoPayment(), discount)
+    crypto_checkout.checkout(order)
+    print("----------------------------------------------------")
+
+</code></pre>
+</body>
