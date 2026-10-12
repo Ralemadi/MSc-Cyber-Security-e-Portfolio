@@ -13,7 +13,7 @@ The Adapter example addresses an interface mismatch between a legacy log collect
 - `ModernLogCollector` already returns events through `get_events()`.
 - Both sources can therefore be stored together and merged through the same interface.
 
-**Source code:** [`log_collector.html`]([code/log_collector.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/Collaborative%20Discussion%20Structural%20Design%20Patterns/code/log_collector.html))
+**Source code:** [`log_collector.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/Collaborative%20Discussion%20Structural%20Design%20Patterns//code/log_collector.html)
 
 The execution result shows legacy and modern events combined into a single event list:
 
@@ -36,7 +36,7 @@ The Bridge example separates **alert behaviour** from **delivery channels** so t
 
 This prevents an expanding class hierarchy such as `CriticalEmailAlert`, `CriticalSMSAlert`, `NormalEmailAlert`, and similar combinations.
 
-**Source code:** [`security_alerts.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/code/security_alerts.html)
+**Source code:** [`security_alerts.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/Collaborative%20Discussion%20Structural%20Design%20Patterns/code/security_alerts.html)
 
 The result demonstrates one normal console alert and critical alerts delivered through email and SMS:
 
@@ -53,7 +53,7 @@ The Composite example models individual network assets and groups through one co
 
 Because both leaves and composites implement `show()`, the complete asset inventory can be traversed and displayed through the same operation.
 
-**Source code:** [`network_asset_inventory.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/code/network_asset_inventory.html)
+**Source code:** [`network_asset_inventory.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/Collaborative%20Discussion%20Structural%20Design%20Patterns/code/network_asset_inventory.html)
 
 The execution result shows the complete office network as a hierarchy of groups and individual devices:
 
@@ -75,7 +75,7 @@ Instructor Nawaz Khan positively highlighted the Composite example as a clear us
 
 ## Full Discussion Document
 
-**[Open Collaborative Discussion 1 Structural Patterns.pdf](Collaborative%20Discussion%201%20Structural%20Patterns.pdf)**
+**[Open Collaborative Discussion 1 Structural Patterns.pdf](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/Collaborative%20Discussion%20Structural%20Design%20Patterns/Collaborative%20Discussion%201%20Structural%20Patterns.pdf)**
 
 ## References
 
