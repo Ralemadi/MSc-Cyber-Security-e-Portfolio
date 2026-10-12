@@ -74,8 +74,8 @@ The final suite contains four tests covering:
 | Artefact | Purpose |
 |---|---|
 | [`code/dependency_injection.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/Case%20Study%20Activity/code/dependency_injection.html) | Refactored notification design using abstraction, Email/SMS services and constructor injection |
-| [`tests/test_dependency_injection.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/Case%20Study%20Activity/code/tests/test_dependency_injection.html) | Mock-based unit tests of `UserManager` in isolation |
-| [`test_results.txt`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/Case%20Study%20Activity/code/test_results.txt) | Successful execution of the four unit tests |
+| [`tests/test_dependency_injection.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/Case%20Study%20Activity/tests/test_dependency_injection.html) | Mock-based unit tests of `UserManager` in isolation |
+| [`test_results.txt`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-11/Case%20Study%20Activity/test_results.txt) | Successful execution of the four unit tests |
 | [`images/high-level_architecture.png`](images/high-level_architecture.png) | High-level DI/IoC architecture evidence |
 | [`images/test_results.png`](images/test_results.png) | Visual unit-test evidence |
 
