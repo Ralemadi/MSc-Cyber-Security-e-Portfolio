@@ -7,9 +7,9 @@ The project provides a `BankAccount` class for deposits, withdrawals, balance ch
 
 ## Portfolio Artefacts
 
-- [BankAccount implementation](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/banking-system/banking_system.html)
-- [TransactionSimulator implementation](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/banking-system/transaction_simulator.html)
-- [Unit tests](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/banking-system/test_banking_system.html)
+- [BankAccount implementation](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/Individual%20Coding%20Exercise/banking-system/banking_system.html)
+- [TransactionSimulator implementation](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/Individual%20Coding%20Exercise/banking-system/transaction_simulator.html)
+- [Unit tests](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/Individual%20Coding%20Exercise/banking-system/test_banking_system.html)
 - [Architecture and Execution Flow](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/images/Architecture%20and%20Execution%20Flow.png)
 - [Unit Testing Result](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-6/images/The%20Unit%20Testing%20Result.png)
 
