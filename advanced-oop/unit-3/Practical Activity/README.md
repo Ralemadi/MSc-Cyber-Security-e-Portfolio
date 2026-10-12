@@ -100,7 +100,7 @@ Driving a Hatchback
 
 The complete implementation is available here:
 
-**[Open Factory_Method.html](code/Factory_Method.html)**
+**[Open Factory_Method.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-3/Practical%20Activity/code/Factory_Method.html)**
 
 ## Factory Method Structure
 
