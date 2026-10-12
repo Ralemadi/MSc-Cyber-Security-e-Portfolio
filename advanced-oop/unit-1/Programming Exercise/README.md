@@ -25,7 +25,7 @@ This task demonstrates **inheritance** by defining a general `Vehicle` class and
 
 The example shows how inheritance can reduce duplication and create a logical relationship between a general class and a more specialised class.
 
-**Source code:** [`task1_inheritance.py`](code/task1_inheritance.py)
+**Source code:** [`task1_inheritance.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-1/Programming%20Exercise/code/task1_inheritance.html)
 
 ![Task 1 – Inheritance](images/Task_1_Inheritance.png)
 
@@ -41,7 +41,7 @@ This task demonstrates **polymorphism** using an abstract `Shape` class with an 
 
 This shows how objects with a common interface can respond to the same method call according to their own implementation.
 
-**Source code:** [`task2_polymorphism.py`](code/task2_polymorphism.py)
+**Source code:** [`task2_polymorphism.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-1/Programming%20Exercise/code/task2_polymorphism.html)
 
 ![Task 2 – Polymorphism](images/Task_2_Polymorphism.png)
 
@@ -57,7 +57,7 @@ This task demonstrates **encapsulation** using a `BankAccount` class. The balanc
 
 Input validation is also included to reject invalid balances or transaction amounts.
 
-**Source code:** [`task3_encapsulation.py`](code/task3_encapsulation.py)
+**Source code:** [`task3_encapsulation.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-1/Programming%20Exercise/code/task3_encapsulation.html)
 
 ![Task 3 – Encapsulation](images/Task_3_Encapsulation.png)
 
@@ -73,7 +73,7 @@ This task demonstrates **abstraction** using an abstract `Animal` class. The bas
 
 The abstract class defines the common structure without specifying the exact behaviour of every animal.
 
-**Source code:** [`task4_abstraction.py`](code/task4_abstraction.py)
+**Source code:** [`task4_abstraction.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-1/Programming%20Exercise/code/task4_abstraction.html)
 
 ![Task 4 – Abstraction](images/Task_4_Abstraction.png)
 
@@ -94,7 +94,7 @@ This task demonstrates object **initialisation and finalisation** using `__init_
 
 The `Person` class uses `__init__()` to initialise the object's name when it is created. The `__del__()` method demonstrates behaviour associated with object finalisation when the object is explicitly deleted.
 
-**Source code:** [`task5_constructor_destructor.py`](code/task5_constructor_destructor.py)
+**Source code:** [`task5_constructor_destructor.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-1/Programming%20Exercise/code/task5_constructor_destructor.html)
 
 ![Task 5 – Constructor and Destructor](images/Task_5_Constructor_and_Destructor.png)
 
