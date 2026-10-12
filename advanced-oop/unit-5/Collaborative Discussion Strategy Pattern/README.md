@@ -61,7 +61,7 @@ This separates the changing payment behaviour from the stable processor logic.
 
 ## Complete Implementation
 
-**[Open Payment_Processor.html](code/Payment_Processor.html)**
+**[Open Payment_Processor.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-5/Collaborative%20Discussion%20Strategy%20Pattern/code/Payment_Processor.html)**
 
 ![Payment Processor Code](images/Payment_Processor.png)
 
