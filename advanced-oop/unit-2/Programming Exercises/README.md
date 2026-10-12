@@ -32,7 +32,7 @@ The initial design contains an `Item` class and an `Order` class.
 
 Although the program works correctly, the design mixes several responsibilities inside the same class.
 
-**Source code:** [`initial_shopping_system.py`](code/initial_shopping_system.py)
+**Source code:** [`initial_shopping_system.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-2/Programming%20Exercises/code/initial_shopping_system.html)
 
 ![Initial Code](images/Initial%20Code.png)
 
@@ -82,7 +82,7 @@ Main components include:
 
 `CheckoutService` coordinates the checkout process while depending on the `PaymentMethod` and `Discount` abstractions instead of specific implementations.
 
-**Source code:** [`refactored_solid_shopping_system.py`](code/refactored_solid_shopping_system.py)
+**Source code:** [`refactored_solid_shopping_system.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-2/Programming%20Exercises/code/refactored_solid_shopping_system.html)
 
 ### Execution Result
 
