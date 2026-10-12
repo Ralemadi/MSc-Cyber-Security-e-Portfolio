@@ -13,7 +13,7 @@ The Adapter example addresses an interface mismatch between a legacy log collect
 - `ModernLogCollector` already returns events through `get_events()`.
 - Both sources can therefore be stored together and merged through the same interface.
 
-**Source code:** [`log_collector.html`](code/log_collector.html)
+**Source code:** [`log_collector.html`]([code/log_collector.html](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/Collaborative%20Discussion%20Structural%20Design%20Patterns/code/log_collector.html))
 
 The execution result shows legacy and modern events combined into a single event list:
 
