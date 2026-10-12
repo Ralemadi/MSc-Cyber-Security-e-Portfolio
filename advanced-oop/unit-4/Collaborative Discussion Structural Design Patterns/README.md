@@ -36,7 +36,7 @@ The Bridge example separates **alert behaviour** from **delivery channels** so t
 
 This prevents an expanding class hierarchy such as `CriticalEmailAlert`, `CriticalSMSAlert`, `NormalEmailAlert`, and similar combinations.
 
-**Source code:** [`security_alerts.html`](code/security_alerts.html)
+**Source code:** [`security_alerts.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/code/security_alerts.html)
 
 The result demonstrates one normal console alert and critical alerts delivered through email and SMS:
 
@@ -53,7 +53,7 @@ The Composite example models individual network assets and groups through one co
 
 Because both leaves and composites implement `show()`, the complete asset inventory can be traversed and displayed through the same operation.
 
-**Source code:** [`network_asset_inventory.html`](code/network_asset_inventory.html)
+**Source code:** [`network_asset_inventory.html`](https://ralemadi.github.io/MSc-Cyber-Security-e-Portfolio/advanced-oop/unit-4/code/network_asset_inventory.html)
 
 The execution result shows the complete office network as a hierarchy of groups and individual devices:
 
